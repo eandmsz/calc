@@ -26,7 +26,7 @@
 13) I have changed the application name from cosmic calc to just "Calc" . Please update all documentation, comments, source code that refers to cosmic calc. But of course we still use libcosmic.
 
 TODO in future:
- - Implement negotiation of xdg-decoration protocol so KDE Kwin, Gnome Mutter, Xfce xfwl4 can use their own window decoration. We can maybe save this in the config.toml, so we don't need to run the negotiation every time we start the application. Whatever is faster for the app startup.
+ - Implement negotiation of xdg-decoration protocol so KDE Kwin, Gnome Mutter, Xfce xfwl4 can use their own window decoration. We can maybe save this in the config.toml, so we don't need to run the negotiation every time we start the application. Do whatever is faster for the app startup.
  - Implement cosmic frosted glass effect (blur) from the desktop environment
  - Implement neon glow effect for the button borders so it shines around its area a little bit
 
