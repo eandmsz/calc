@@ -23,6 +23,8 @@
 
 12) Add an autodetect system font option in the settings as a button. When the user presses it it will automatically select the system's general font from the font list.
 
+13) I have changed the application name from cosmic calc to just "Calc" . Please update all documentation, comments, source code that refers to cosmic calc. But of course we still use libcosmic.
+
 TODO in future:
  - Implement negotiation of xdg-decoration protocol so KDE Kwin, Gnome Mutter, Xfce xfwl4, Hyprland/Sway wlroots can use their own window decoration. We can maybe save this in the config.toml, so we don't need to run the negotiation every time we start the application. Whatever is faster for the app startup.
  - Implement cosmic frosted glass effect (blur) from the desktop environment
