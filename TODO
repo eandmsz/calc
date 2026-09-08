@@ -15,6 +15,15 @@
 
 8) Add a slider in the settings side panel which configures when we change to scientific notation. The range should be 2 - 99 (default 15). Of course this needs to saved in config.toml as well.
 
+9) The startup time of the application could be faster. It's just a lightweight calculator so I want it to immediately open. Maybe the font list loading slows it down or something else, but if it's something which is only visible in the settings side panel then please make the app faster to open and just grey out the settings button until their contents (e.g. font list are loaded
+
+10) Just answer this questions without changing anything: What would be the pro/con for changing libcosmic to egui? Would the app be starter to launch? Would it be more lightweight on a very slow (rpi) computer? Would there be less complicated code? Could it still handle the fonts, themes, superscript, subscript, GPU acceleration? How about memory use, because right now it uses ~130MB RAM which is a bit high for a small app like this?
+
+11) Why the application does not appear in the applications list in KDE System monitor? I can only find it among the processes.
+
+12) Add an autodetect system font option in the settings as a button. When the user presses it it will automatically select the system's general font from the font list.
+
 TODO in future:
+ - Implement negotiation of xdg-decoration protocol so KDE Kwin, Gnome Mutter, Xfce xfwl4, Hyprland/Sway wlroots can use their own window decoration. We can maybe save this in the config.toml, so we don't need to run the negotiation every time we start the application. Whatever is faster for the app startup.
  - Implement cosmic frosted glass effect (blur) from the desktop environment
  - Implement neon glow effect for the border so it shines around its area a little bit
