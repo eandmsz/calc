@@ -29,3 +29,6 @@ TODO in future:
  - Implement negotiation of xdg-decoration protocol so KDE Kwin, Gnome Mutter, Xfce xfwl4, Hyprland/Sway wlroots can use their own window decoration. We can maybe save this in the config.toml, so we don't need to run the negotiation every time we start the application. Whatever is faster for the app startup.
  - Implement cosmic frosted glass effect (blur) from the desktop environment
  - Implement neon glow effect for the button borders so it shines around its area a little bit
+
+At a later more mature stage:
+ - Look for vulnerabilities, attack vectors in the code. Especially when we paste something from the clipboard and read the config.toml and load the fonts. These are the points where an attacker can inject malicious code.
