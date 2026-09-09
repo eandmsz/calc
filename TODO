@@ -1,38 +1,48 @@
 
-1) Add new themes: "Army" with green/brown colors and "ArmyChalk" font and "Hacker" with "BigBlue_TerminalPlus Nerd Font Mono". It should be possible to assign fonts which are not in the recommended list.
+1) Rename themes to color schemes in the settings
 
-2) The font_weight under button groups should be exposed in the config.toml as well. I expect to see the font_weight bold under [themes.RedmondDark.number] and [themes.RedmondLight.number]
+2) Add new color schemes: "Army" with green/brown colors and "ArmyChalk" font and "Hacker" with "BigBlue_TerminalPlus Nerd Font Mono" and "Sandstone" and "Inherit Desktop". It should be possible to assign fonts which are not in the recommended list.
+The "Inherit Desktop" should be the default color scheme option and it should be on top of the list. The font should be auto detected from the system's general font for the "Inherit Desktop" default option.
 
-3) Make all the button groups in CupertinoDark and CupertinoLight to have font_weight "regular" setting while the theme itself preserves the "light" setting for places which are not the button groups
+3) Add to the fonts list a special option on the top of the list called: "Theme default" which will try to use the hardcoded theme option. In the config.toml we don't save it like this, but instead we save the font name which was hardcoded.
 
-4) There should be a 4th column for the colors for the button groups, which is the 2nd toggled state fill, font, border colors. Every button group should have this, even if there is no secondary function assigned for them, since the layout can be changed. The "second" button group which hosts the "2nd" button should get it's toggled color from this column instead how it is done right now (it is not exposed in the config, but somehow derived (maybe inverted) from the existing colors).
+4) If the font defined in the config.toml does not exist (because the user mistyped it when editing the config file, or just simply the default hardcoded font is not installed) then we choose the system's general font
 
-5) Rename "debug_raw_formula" to "ascii_mode" in the config.toml
+5) There should be a 4th column for the colors for the button groups, which is the 2nd toggled state fill, font, border colors. Every button group should have this, even if there is no secondary function assigned for them, since the layout can be changed. The "second" button group which hosts the "2nd" button should get it's toggled color from this column instead how it is done right now (it is not exposed in the config, but somehow derived (maybe inverted) from the existing colors).
 
-6) When the user pastes something from the clipboard check the contents before deciding how to paste it. If it has operators and other stuff then overwrite what is on the current display (current behavior). If it's a number (with or without a decimal dot or comma) then just paste it as an operand, so in this case if the user already types "52" then the pasted number should replace that, but if the user typed "52+" then it should come after the plus sign. So the last operand (empty or not) should be from the clipboard if its a number. If it's a too big number, then silently ignore the paste (I think this is the current behavior but test it).
+6) Rename "debug_raw_formula" to "ascii_mode" in the config.toml
 
-7) The font size scaling is not accurate. This might be because it depends on the font itself, but we should always use the available horizontal and vertival space efficiently regardless of which font is used. Right now if I paste in a really long number e.g.: "99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999" it will be smaller than it should be and only using about 80% of the horizontal space. Also, some fonts which have italic effect by default on the regular weight (e.g. Monte Carlo) will go out from the main display area on the right (the first character). It looks like the bottom of the font is correctly aligned but the top is not checked.
+7) When the user pastes something from the clipboard check the contents before deciding how to paste it. If it has operators and other stuff then overwrite what is on the current display (current behavior). If it's a number (with or without a decimal dot or comma) then just paste it as an operand, so in this case if the user already types "52" then the pasted number should replace that, but if the user typed "52+" then it should come after the plus sign. So the last operand (empty or not) should be from the clipboard if its a number. If it's a too big number, then silently ignore the paste (I think this is the current behavior but test it).
 
-8) Add a slider in the settings side panel which configures when we change to scientific notation. The range should be 2 - 99 (default 15). Of course this needs to saved in config.toml as well.
+8) The font size scaling is not accurate. This might be because it depends on the font itself, but we should always use the available horizontal and vertival space efficiently regardless of which font is used. Right now if I paste in a really long number e.g.: "99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999" it will be smaller than it should be and only using about 80% of the horizontal space. Also, some fonts which have italic effect by default on the regular weight (e.g. Monte Carlo) will go out from the main display area on the right (the first character). It looks like the bottom of the font is correctly aligned but the top is not checked.
 
-9) The startup time of the application could be faster. It's just a lightweight calculator so I want it to immediately open. Maybe the font list loading slows it down or something else, but if it's something which is only visible in the settings side panel then please make the app faster to open and just grey out the settings button until their contents (e.g. font list are loaded
+9) Add a slider in the settings side panel which configures when we change to scientific notation. The range should be 2 - 99 (default 15). Of course this needs to saved in config.toml as well.
 
-10) Just answer this questions without changing anything: What would be the pro/con for changing libcosmic to egui? Would the app be starter to launch? Would it be more lightweight on a very slow (rpi) computer? Would there be less complicated code? Could it still handle the fonts, themes, superscript, subscript, GPU acceleration? How about memory use, because right now it uses ~130MB RAM which is a bit high for a small app like this?
+10) The startup time of the application could be faster. It's just a lightweight calculator so I want it to immediately open. Maybe the font list loading slows it down or something else, but if it's something which is only visible in the settings side panel then please make the app faster to open and just grey out the settings button until their contents (e.g. font list are loaded. Does libcosmic add to the application startup delay? I assume egui without gpu acceleration would be much more lightweight and fast to startup, right? I want it to be super fast even on a RaspberryPi
 
-11) Why the application does not appear in the applications list in KDE System monitor? I can only find it among the processes.
+11) Just answer this questions without changing anything: What would be the pro/con for changing libcosmic to egui? Would the app be starter to launch? Would it be more lightweight on a very slow (rpi) computer? Would there be less complicated code? Could it still handle the fonts, themes, superscript, subscript, GPU acceleration? How about memory use, because right now it uses ~130MB RAM which is a bit high for a small app like this? Can we just skip GPU acceleration to have simpler codebase and faster startup and use "tiny-skia" instead? egui is immediate-mode and by default repaints every frame so we need to configure it to only repaint on input/events (ctx.request_repaint(), but this is the only complication compared to libcosmic (which is event based and not redrawing if nothing is pressed). egui uses less memory as well and produces probably a smaller executable because less dependencies are pulled in. libcosmic: Elm-style architecture requires to define a Message enum for every event (digit presses, operators, clear, etc.), implement update() to mutate state per message, and a separate view() to build the widget tree from state, plus the cosmic::Application trait boilerplate (init, title, etc.). So probably we can get rid of all that.
 
-12) Add an autodetect system font option in the settings as a button. When the user presses it it will automatically select the system's general font from the font list.
+12) Why the application does not appear in the applications list in KDE System monitor? I can only find it among the processes.
 
 13) I have changed the application name from cosmic calc to just "Calc" . Please update all documentation, comments, source code that refers to cosmic calc. But of course we still use libcosmic.
 
-14) Add Translation support: Only for UI elements e.g.: "History", "Scientific mode", "Decimal Separator" and error messages e.g.: "Undefined: Negative number under even root"
+14) Add Translation support: Only for UI elements e.g.: "History", "Scientific mode", "Decimal Separator" and error messages e.g.: "Undefined: Negative number under even root". Autodetect system language on first startup and save it in config.toml. Add GUI option in settings to be able to change it.
+
+15) Remove as many dependencies as possible, so the package can work longer even if the distro repo changes underlying libs
 
 
 TODO in future:
  - Implement negotiation of xdg-decoration protocol so KDE Kwin, Gnome Mutter, Xfce xfwl4 can use their own window decoration. We can maybe save this in the config.toml, so we don't need to run the negotiation every time we start the application. Do whatever is faster for the app startup.
  - Implement cosmic frosted glass effect (blur) from the desktop environment
  - Implement neon glow effect for the button borders so it shines around its area a little bit
+ - Create svg icon that can be used for packaging
+ - Don't mention hackable in readme if desktop color inheritance works. Don't expose colors in config.toml.
+ - Add Readme: Lightweight: using egui and optimized for quick startup
+ - Add Readme: supports xdg-decoration protocol which enables Wayland compositors (Kwin, Mutter, xfw14, cosmic-comp) to draw their own window decoration
+ - Add Readme: Detects system theme colors and matches them in the "Inherit Desktop" color scheme
+
 
 At a later more mature stage:
  - Look for vulnerabilities, attack vectors in the code. Especially when we paste something from the clipboard and read the config.toml and load the fonts. These are the points where an attacker can inject malicious code.
  - Simplify the code to be easier to understand by a human. For example I don't understand what is the point having lib.rs or ast.rs gamma.rs mod.rs separately when they barely have any content.
+ - Add packaging methods for: deb rpm flatpak
