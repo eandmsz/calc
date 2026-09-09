@@ -1,13 +1,25 @@
+//! Calc - An easy-to-use stateful scientific calculator focusing on intuitive user experience
+//! Copyright (C) 2027  Andras Vinter
+//!
+//! This program is free software: you can redistribute it and/or modify
+//! it under the terms of the GNU General Public License as published by
+//! the Free Software Foundation, either version 3 of the License, or
+//! (at your option) any later version.
+//!
+//! This program is distributed in the hope that it will be useful,
+//! but WITHOUT ANY WARRANTY; without even the implied warranty of
+//! MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//! GNU General Public License for more details.
+//!
+//! You should have received a copy of the GNU General Public License
+//! along with this program.  If not, see <https://www.gnu.org/licenses/>."
+//!
 //! Persistent configuration. Every runtime knob the user can tweak
 //! either through the settings panel or by hand-editing
 //! `config.toml` lives here. The struct round-trips through
 //! serde/toml; `Config::validate_and_clamp` snaps any out-of-range
 //! values the user typed into their nearest legal equivalent so we
 //! never crash on a bad file.
-//!
-//! Defaults: 15 significant digits on the display, a 300 × 700 startup
-//! window, the Basic keypad, the Cosmic theme, and an OS-detected
-//! decimal separator.
 
 use std::fs;
 use std::io;
