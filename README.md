@@ -1,6 +1,6 @@
 # Calc
 
-## An easy-to-use stateful scientific calculator focusing on intuitive user experience
+## Stateful scientific calculator focusing on intuitive user experience
 
 - Written purely in Rust. No dependencies or wrappers for C or Python
 - Focusing on simplicity and ease-of-use: Does what you would expect from a calculator, nothing more, nothing less
