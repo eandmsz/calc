@@ -25,7 +25,7 @@
 
 13) I have changed the application name from cosmic calc to just "Calc" . Please update all documentation, comments, source code that refers to cosmic calc. But of course we still use libcosmic.
 
-14) Add Translation support
+14) Add Translation support: Only for UI elements e.g.: "History", "Scientific mode", "Decimal Separator" and error messages e.g.: "Undefined: Negative number under even root"
 
 
 TODO in future:
@@ -35,4 +35,4 @@ TODO in future:
 
 At a later more mature stage:
  - Look for vulnerabilities, attack vectors in the code. Especially when we paste something from the clipboard and read the config.toml and load the fonts. These are the points where an attacker can inject malicious code.
- - Simplify the code to be easier to understand by a human. For example I don't understand what is the point having lib.rs separately when it barely has any content.
+ - Simplify the code to be easier to understand by a human. For example I don't understand what is the point having lib.rs or ast.rs gamma.rs mod.rs separately when they barely have any content.
