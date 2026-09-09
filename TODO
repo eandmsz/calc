@@ -25,6 +25,9 @@
 
 13) I have changed the application name from cosmic calc to just "Calc" . Please update all documentation, comments, source code that refers to cosmic calc. But of course we still use libcosmic.
 
+14) Add Translation support
+
+
 TODO in future:
  - Implement negotiation of xdg-decoration protocol so KDE Kwin, Gnome Mutter, Xfce xfwl4 can use their own window decoration. We can maybe save this in the config.toml, so we don't need to run the negotiation every time we start the application. Do whatever is faster for the app startup.
  - Implement cosmic frosted glass effect (blur) from the desktop environment
@@ -32,4 +35,4 @@ TODO in future:
 
 At a later more mature stage:
  - Look for vulnerabilities, attack vectors in the code. Especially when we paste something from the clipboard and read the config.toml and load the fonts. These are the points where an attacker can inject malicious code.
- - Simplify the code to be easier to understand by a human
+ - Simplify the code to be easier to understand by a human. For example I don't understand what is the point having lib.rs separately when it barely has any content.
