@@ -13,7 +13,7 @@
 //!
 //! You should have received a copy of the GNU General Public License
 //! along with this program.  If not, see <https://www.gnu.org/licenses/>."
-//!
+
 //! Persistent configuration. Every runtime knob the user can tweak
 //! either through the settings panel or by hand-editing
 //! `config.toml` lives here. The struct round-trips through
