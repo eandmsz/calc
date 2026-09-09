@@ -1,3 +1,16 @@
+//! Calc - An easy-to-use stateful scientific calculator focusing on intuitive user experience
+//! Copyright (C) 2027  Andras Vinter
+//!
+//! This program is free software: you can redistribute it and/or modify
+//! it under the terms of the GNU General Public License as published by
+//! the Free Software Foundation, either version 3 of the License, or
+//! (at your option) any later version.
+//!
+//! This program is distributed in the hope that it will be useful,
+//! but WITHOUT ANY WARRANTY; without even the implied warranty of
+//! MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//! GNU General Public License for more details.
+
 //! Keyboard capture. Uses `event::listen_with` so the keypad reacts
 //! to the entire window's key stream, not just the currently focused
 //! widget. The mapping is deliberately permissive: NumLock-on and
