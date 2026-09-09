@@ -8,7 +8,7 @@
 - Stateful operation for an intuitive workflow: e.g. you can repeat the last operation or use backspace to delete backwards
 - Hackable: Button layout, theme colors (by editing config.toml)
 - Basic operations use decimal arithmetic, so `0.1 + 0.2 - 0.3` or `0.3 mod 0.1` result in exactly `0`
-- Transcendental functions (trigonometry, exponentials, logarithms, roots) use IEEE 754 f64 which gives 15–17 significant decimal digits precision
+- Transcendental functions (trigonometry, exponentials, logarithms, roots) use IEEE 754 f64 (gives 15–17 significant decimal digits precision)
 
 ## Out of scope:
 
