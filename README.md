@@ -5,7 +5,7 @@
 - Written purely in Rust. No dependencies or wrappers for C or Python
 - Focusing on simplicity and ease-of-use: Does what you would expect from a calculator, nothing more or less
 - Logical and aesthetic layout: Superscript & subscript display, predefined themes, configurable fonts and shapes
-- Stateful operation for an intuitive workflow: e.g. you can repeat the last operation or use backspace to delete backwards
+- Stateful operation for an intuitive workflow: can repeat the last operation or use backspace to delete backwards
 - Hackable: Button layout, theme colors (by editing config.toml)
 - Basic operations use decimal arithmetic, so `0.1 + 0.2 - 0.3` or `0.3 mod 0.1` result in exactly `0`
 - Transcendental functions (trigonometry, exponentials, logarithms, roots) use IEEE 754 f64 (gives 15–17 significant decimal digits precision)
