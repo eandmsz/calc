@@ -18,17 +18,27 @@ The "Inherit Desktop" should be the default color scheme option and it should be
 
 9) Add a slider in the settings side panel which configures when we change to scientific notation. The range should be 2 - 99 (default 15). Of course this needs to saved in config.toml as well.
 
-10) The startup time of the application could be faster. It's just a lightweight calculator so I want it to immediately open. Maybe the font list loading slows it down or something else, but if it's something which is only visible in the settings side panel then please make the app faster to open and just grey out the settings button until their contents (e.g. font list are loaded. Does libcosmic add to the application startup delay? I assume egui without gpu acceleration would be much more lightweight and fast to startup, right? I want it to be super fast even on a RaspberryPi
+10) Why the application does not appear in the applications list in KDE System monitor? I can only find it among the processes.
 
-11) Just answer this questions without changing anything: What would be the pro/con for changing libcosmic to egui? Would the app be starter to launch? Would it be more lightweight on a very slow (rpi) computer? Would there be less complicated code? Could it still handle the fonts, themes, superscript, subscript, GPU acceleration? How about memory use, because right now it uses ~130MB RAM which is a bit high for a small app like this? Can we just skip GPU acceleration to have simpler codebase and faster startup and use "tiny-skia" instead? egui is immediate-mode and by default repaints every frame so we need to configure it to only repaint on input/events (ctx.request_repaint(), but this is the only complication compared to libcosmic (which is event based and not redrawing if nothing is pressed). egui uses less memory as well and produces probably a smaller executable because less dependencies are pulled in. libcosmic: Elm-style architecture requires to define a Message enum for every event (digit presses, operators, clear, etc.), implement update() to mutate state per message, and a separate view() to build the widget tree from state, plus the cosmic::Application trait boilerplate (init, title, etc.). So probably we can get rid of all that.
+11) I have changed the application name from cosmic calc to just "Calc" . Please update all documentation, comments, source code that refers to cosmic calc. But of course we still use libcosmic.
 
-12) Why the application does not appear in the applications list in KDE System monitor? I can only find it among the processes.
+12) Add Translation support: Only for UI elements e.g.: "History", "Scientific mode", "Decimal Separator" and error messages e.g.: "Undefined: Negative number under even root". Autodetect system language on first startup and save it in config.toml. Add GUI option in settings to be able to change it.
 
-13) I have changed the application name from cosmic calc to just "Calc" . Please update all documentation, comments, source code that refers to cosmic calc. But of course we still use libcosmic.
+13) Remove as many dependencies as possible, so the package can work longer even if the distro repo changes underlying libs
 
-14) Add Translation support: Only for UI elements e.g.: "History", "Scientific mode", "Decimal Separator" and error messages e.g.: "Undefined: Negative number under even root". Autodetect system language on first startup and save it in config.toml. Add GUI option in settings to be able to change it.
+---------------------------------------
 
-15) Remove as many dependencies as possible, so the package can work longer even if the distro repo changes underlying libs
+Just answer this questions without changing anything: What would be the pro/con for changing libcosmic to egui? Would the app be faster to launch? Would it be more lightweight on a very slow (rpi) computer? Would there be less complicated code? Could it still handle the fonts, color schemes, superscript, subscript, transparency?
+How about memory use, because right now it uses ~130MB RAM which is a bit high for a small app like this!
+Can we just skip GPU acceleration to have simpler codebase and faster startup and use "tiny-skia" instead? egui is immediate-mode and by default repaints every frame so we need to configure it to only repaint on input/events (ctx.request_repaint(), but this is the only complication compared to libcosmic (which is event based and not redrawing if nothing is pressed). egui uses less memory as well and produces probably a smaller executable because less dependencies are pulled in. libcosmic: Elm-style architecture requires to define a Message enum for every event (digit presses, operators, clear, etc.), implement update() to mutate state per message, and a separate view() to build the widget tree from state, plus the cosmic::Application trait boilerplate (init, title, etc.). So probably we can get rid of all that.
+
+The startup time of the application could be optimized to be much faster. It's just a lightweight calculator so I want it to open instantly.
+- Maybe the font list loading slows it down or something else, but if it's something which is only visible in the settings side panel then please make the app faster to open and just grey out the settings button until their contents (e.g. font list are loaded.
+- Does libcosmic add to the application startup delay? I assume egui without gpu acceleration would be much more lightweight and fast to startup, right? I want it to be super fast even on a RaspberryPi
+- The executable binary is around 20MB which is a lot for a small calculator. It probably has lots of bloat, so please get rid of the dead code and consider adding strip = true and lto = true and opt-level = "z" and panic = "abort" and make sure we don't use UPX compression. You can evaluate these options and discover new ones as well to optimize for the fastest cold startup possible. Also check for enabled features you don't use — many crates have optional features (like full on tokio) that you can disable via default-features = false and picking only what you need. Reduce dependencies, Big contributors to bloat are often:
+ - Async runtimes (tokio) — if you don't need async, drop it
+ - Regex, serde with derive, clap with all features — these can pull in a lot of generated code
+ - Run cargo bloat --release (install with cargo install cargo-bloat) to see exactly which crates/functions are eating the space
 
 
 TODO in future:
