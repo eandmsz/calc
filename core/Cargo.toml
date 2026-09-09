@@ -1,7 +1,7 @@
 [package]
 name = "cosmic-calc-core"
 version = "0.2.8"
-edition = "2027"
+edition = "2021"
 description = "Calculation engine, configuration and formatting for cosmic-calc"
 license = "GPL-3.0-only"
 
