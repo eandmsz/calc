@@ -3,7 +3,7 @@
 ## Stateful scientific calculator focusing on intuitive user experience
 
 - Written purely in Rust. No dependencies or wrappers for C or Python
-- Focusing on simplicity and ease-of-use: Does what you would expect from a calculator, nothing more, nothing less
+- Focusing on simplicity and ease-of-use: Does what you would expect from a calculator, nothing more or less
 - Logical and aesthetic layout: Superscript & subscript display, predefined themes, configurable fonts and button shapes
 - Stateful operation for an intuitive workflow: e.g. you can repeat the last operation or use backspace to delete backwards
 - Hackable: Button layout, theme colors (by editing config.toml)
