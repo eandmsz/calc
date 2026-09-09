@@ -32,3 +32,4 @@ TODO in future:
 
 At a later more mature stage:
  - Look for vulnerabilities, attack vectors in the code. Especially when we paste something from the clipboard and read the config.toml and load the fonts. These are the points where an attacker can inject malicious code.
+ - Simplify the code to be easier to understand by a human
