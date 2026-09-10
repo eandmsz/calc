@@ -20,7 +20,7 @@
 - Programmer's operations: bitshift, binary, hexadecimal calculations
 - Economic and statistics calculations: mean, standard deviation, sum of squares
 - Graphing calculations
-- Date, Currency, Unit conversions (currency would need a data provider and we want to keep this tool to be 100% offline)
+- Date, Currency, Unit conversions (we want to keep this tool to be 100% offline)
 - Area, perimeter, volume, surface formulas
 - Physics, chemistry formulas/constants
 
