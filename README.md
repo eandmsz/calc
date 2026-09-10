@@ -24,7 +24,23 @@
 
 ## Recommended fonts to install:
  - Cupertino: SF Pro Display
+ - Redmond: Segoe UI
  - Wolfenstein: zilverstone eYe/FS
+ - Army: ArmyChalk
+ - Cosmic: Open Sans
+ - Texas: Consolas
+ - Tokyo: Noto Sans
+ - Cyberpunk: Adwaita Mono
+ - Plastic: Comfortaa
+ - Crystal: Cantarell
+ - Barbie:
+ - Emerald: Cambria
+ - Flat: Trebuchet MS
+ - Matrix: JetBrains Mono"
+ - Sandstone: 
+
+   These fonts are not included due to licensing
+   If they are missing, the themes will use the default general system font by default and you can choose whatever font you prefer
 
 ## License
 
