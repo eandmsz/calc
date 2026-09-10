@@ -40,6 +40,9 @@
  - Matrix: JetBrains Mono"
  - Sandstone: 
 
+These fonts are not included due to licensing
+If they are missing, the themes will use the default general system font by default and you can choose whatever font you prefer
+   
 ## License
 
 GPL-3.0-only. See [LICENSE](LICENSE).
