@@ -1894,7 +1894,7 @@ pub(super) fn preset(kind: ThemeKind) -> Theme {
         ThemeKind::Wolfenstein => Theme {
             id: ThemeKind::Wolfenstein,
             display_name: "Wolfenstein".to_string(),
-            font: "Bahnschrift".to_string(),
+            font: "zilverstone eYe/FS".to_string(),
             font_weight: FontWeight::Bold,
             button_shape: ButtonShape::Auto,
             app_bg: rgba("#1A1614FF"),
