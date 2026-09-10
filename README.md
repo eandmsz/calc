@@ -25,8 +25,8 @@
  - Barbie:
  - Emerald: Cambria
  - Flat: Trebuchet MS
- - Matrix: JetBrains Mono"
- - Sandstone: 
+ - Matrix: JetBrains Mono
+ - Sandstone: Roboto Slab
 
 If a font is  missing, the default general system font will be used or the one you select
 
