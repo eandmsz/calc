@@ -23,6 +23,7 @@
 - Physics, chemistry formulas/constants
 
 ## Recommended fonts to install:
+
  - Cupertino: SF Pro Display
  - Redmond: Segoe UI
  - Wolfenstein: zilverstone eYe/FS
