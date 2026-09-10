@@ -4,15 +4,26 @@ STAGE 1 Fixing themes:
 ----------------------
 1) Rename themes to color schemes in the settings GUI and "debug_raw_formula" to "ascii_mode" in config.toml
 
-2) Add new color schemes:
+2) I have changed the application name from cosmic calc to just "Calc" . Please update all documentation, comments, source code that refers to cosmic calc. But of course we still use libcosmic.
+
+3) Add new color schemes:
 "Army" with "ArmyChalk" font and green/brown color palette with white text
 "Matrix" with "JetBrains Mono" font and green #53dc52 color over black background
 "Sandstone" with "" font and color palette: #D0C9BF #C4BBAE #BAAB9B #AB9680 #998570 #876E56
 "Inherit Desktop" should auto detect the system's general font. This color scheme should be the default color scheme option when we start the application the first time and config.toml gets generated. It should be on top of the color scheme list and should inherit the colors from the KDE, Gnome, Cosmic, Xfce desktop
 
-3) There should be a second color group defined for each buttongroup called "alt" , which is the 2nd toggled state fill, label, border colors in all 3 states: resting, hover, pressed. Call it for example: science_alt or equals_alt or percent_alt.
-
-4) I have changed the application name from cosmic calc to just "Calc" . Please update all documentation, comments, source code that refers to cosmic calc. But of course we still use libcosmic.
+4) Restructure the color definitions in presets.rs to include the 2nd toggled (alt) state for every button group and make it more compact by removing the "#" from the color codes. I want a very compact color definition table so please change the rgba to accept two colors like this (also change the header comments to include ",alt"):
+```
+number: ButtonColors::grid(
+                //               resting,alt                hover,alt                  pressed,alt
+                StateColors::new(rgba("E0E0E0FF,E0E0E0FF"), rgba("F7F7F7FF,F7F7F7FF"), rgba("CACACAFF,F7F7F7FF")), // fill
+                StateColors::new(rgba("FFFFFFFF,FFFFFFFF"), rgba("FFFFFFFF,FFFFFFFF"), rgba("FFFFFFFF,FFFFFFFF")), // label
+                StateColors::new(rgba("FFFFFFFF,FFFFFFFF"), rgba("FFFFFFFF,FFFFFFFF"), rgba("FFFFFFFF,FFFFFFFF")), // border
+```
+And be prepared for missing values, so if the alt is missing e.g.: StateColors::new(rgba("E0E0E0FF,") then just use the primary color for secondary (alt)
+Similarly if the primary is missing e.g.: StateColors::new(rgba(",E0E0E0FF") then just use the secondary (alt) color for the primary
+If both are missing, then just use FFFFFFFF for both.
+This way we can keep the definition table compact, by not defining unused colors.
 
 
 ------------------------------
@@ -139,9 +150,6 @@ STAGE 5: Misc fixes:
 3) Why the application does not appear in the applications list in KDE System monitor? I can only find it among the processes. Maybe because it was not installed as a normal package?
 
 4) Add Translation support: Only for UI elements e.g.: "History", "Scientific mode", "Decimal Separator" and error messages e.g.: "Undefined: Negative number under even root". Autodetect system language on first startup and save it in config.toml. Add GUI option in settings to be able to change it.
-
----------------------------------------
-
 
 
 
