@@ -10,18 +10,6 @@
 - Basic operations use decimal arithmetic, so `0.1 + 0.2 - 0.3` or `0.3 mod 0.1` result in exactly `0`
 - Transcendental functions (trigonometry, exponentials, logarithms, roots) use IEEE 754 f64 (gives 15–17 significant decimal digits precision)
 
-## Out of scope:
-
-- Arbitrary "infinite" precision arithmetic (Windows Calculator has it)
-- Integral, derivative, lim, combinations (nCr), permutations (nPr), Fibonacci function
-- Complex numbers and imaginary units
-- Programmer's operations: bitshift, binary, hexadecimal calculations
-- Economic and statistics calculations: mean, standard deviation, sum of squares
-- Graphing calculations
-- Date, Currency, Unit conversions (we want to keep this tool to be 100% offline)
-- Area, perimeter, volume, surface formulas
-- Physics, chemistry formulas/constants
-
 ## Recommended fonts to install:
 
  - Cupertino: SF Pro Display
@@ -42,7 +30,19 @@
 
 These fonts are not included due to licensing
 If they are missing, the themes will use the default general system font by default and you can choose whatever font you prefer
-   
+
+## Out of scope:
+
+- Arbitrary "infinite" precision arithmetic (Windows Calculator has it)
+- Integral, derivative, lim, combinations (nCr), permutations (nPr), Fibonacci function
+- Complex numbers and imaginary units
+- Programmer's operations: bitshift, binary, hexadecimal calculations
+- Economic and statistics calculations: mean, standard deviation, sum of squares
+- Graphing calculations
+- Date, Currency, Unit conversions (we want to keep this tool to be 100% offline)
+- Area, perimeter, volume, surface formulas
+- Physics, chemistry formulas/constants
+
 ## License
 
 GPL-3.0-only. See [LICENSE](LICENSE).
