@@ -12,9 +12,7 @@
 
 ## Out of scope:
 
-- Arbitrary "infinite" precision arithmetic (the decimal type is a
-  fixed 18 digits — enough that the 15 on screen are always right, not
-  enough to hold a number of any size you like)
+- Arbitrary "infinite" precision arithmetic (Windows Calculator has it)
 - Integral, derivative, lim, combinations (nCr), permutations (nPr), Fibonacci function
 - Complex numbers and imaginary units
 - Programmer's operations: bitshift, binary, hexadecimal calculations
