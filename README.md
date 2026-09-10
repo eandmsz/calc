@@ -22,6 +22,10 @@
 - Area, perimeter, volume, surface formulas
 - Physics, chemistry formulas/constants
 
+## Recommended fonts to install:
+ - Cupertino: SF Pro Display
+ - Wolfenstein: zilverstone eYe/FS
+
 ## License
 
 GPL-3.0-only. See [LICENSE](LICENSE).
