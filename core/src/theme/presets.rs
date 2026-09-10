@@ -1,3 +1,16 @@
+//! Calc - An easy-to-use stateful scientific calculator focusing on intuitive user experience
+//! Copyright (C) 2027  Andras Vinter
+//!
+//! This program is free software: you can redistribute it and/or modify
+//! it under the terms of the GNU General Public License as published by
+//! the Free Software Foundation, either version 3 of the License, or
+//! (at your option) any later version.
+//!
+//! This program is distributed in the hope that it will be useful,
+//! but WITHOUT ANY WARRANTY; without even the implied warranty of
+//! MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//! GNU General Public License for more details.
+
 //! The twenty shipped palettes, one `Theme` each.
 //!
 //! Every arm is a table and nothing in it is computed: read down a
@@ -9,7 +22,7 @@
 //! carries every one of them, and what the user leaves in the file is
 //! what the window is painted with — see [`super::ThemeTable`].
 
-use crate::color::rgba;
+use crate::color::rgba; // Button Groups to define separately: science, second, toprow, delete, bracket, basicop, equals, percent, reciprocal, trig, rand, negate, decimal, number
 use crate::config::{ButtonShape, FontWeight};
 
 use super::{ButtonColors, StateColors, Theme, ThemeKind};
