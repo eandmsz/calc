@@ -27,6 +27,7 @@
  - Flat: Trebuchet MS
  - Matrix: JetBrains Mono
  - Sandstone: Roboto Slab
+ - Monokai: Noto Sans Math
 
 If a font is  missing, the default general system font will be used or the one you select
 
