@@ -20,11 +20,26 @@ number: ButtonColors::grid(
                 StateColors::new(rgba("FFFFFFFF,FFFFFFFF"), rgba("FFFFFFFF,FFFFFFFF"), rgba("FFFFFFFF,FFFFFFFF")), // label
                 StateColors::new(rgba("FFFFFFFF,FFFFFFFF"), rgba("FFFFFFFF,FFFFFFFF"), rgba("FFFFFFFF,FFFFFFFF")), // border
 ```
-And be prepared for missing values, so if the alt is missing e.g.: StateColors::new(rgba("E0E0E0FF,") then just use the primary color for secondary (alt)
-Similarly if the primary is missing e.g.: StateColors::new(rgba(",E0E0E0FF") then just use the secondary (alt) color for the primary
-If both are missing, then just use FFFFFFFF for both.
-This way we can keep the definition table compact, by not defining unused colors.
-
+Be prepared for missing values, we need to have a fallback mechanism. If the alt color is missing e.g.: StateColors::new(rgba("E0E0E0FF,") then just use the primary color for alt
+Similarly if the primary is missing e.g.: StateColors::new(rgba(",E0E0E0FF") then just use the alt color for the primary
+If both are missing, then fallback to another group. Here is the fallback priority:
+  second -> science
+  bracket -> science
+  rand -> science
+  trig -> science
+  reciprocal -> science
+  toprow -> delete
+  percent -> delete
+  delete -> science
+  science -> number
+  equals -> basicop
+  negate -> number
+  basicop -> number
+  decimal -> number
+  At the end: normal number colors (not alt) need to be defined because that's where all falls back
+  It should work with multiple levels of fallback: e.g.: if no percent color defined (neither normal nor alt): fallback to delete, if no delete color defined, fallback to science, if no science color defined either: fallback to number, if number does not have alt color defined: fallback we use the primary color
+  This way we can leave most of the colors empty in a theme, while still having the ability to color some groups separately if we want to
+  I hope I didn't miss any button group from the fallback rules
 
 ------------------------------
 STAGE 2 Fixing code structure:
