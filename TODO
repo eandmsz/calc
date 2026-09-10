@@ -1,58 +1,158 @@
 
-1) Rename themes to color schemes in the settings
+----------------------
+STAGE 1 Fixing themes:
+----------------------
+1) Rename themes to color schemes in the settings GUI and "debug_raw_formula" to "ascii_mode" in config.toml
 
-2) Add new color schemes: "Army" with green/brown colors and "ArmyChalk" font and "Hacker" with "BigBlue_TerminalPlus Nerd Font Mono" and "Sandstone" and "Inherit Desktop". It should be possible to assign fonts which are not in the recommended list.
-The "Inherit Desktop" should be the default color scheme option and it should be on top of the list. The font should be auto detected from the system's general font for the "Inherit Desktop" default option.
+2) Add new color schemes:
+"Army" with "ArmyChalk" font and green/brown color palette with white text
+"Matrix" with "JetBrains Mono" font and green #53dc52 color over black background
+"Sandstone" with "" font and color palette: #D0C9BF #C4BBAE #BAAB9B #AB9680 #998570 #876E56
+"Inherit Desktop" should auto detect the system's general font. This color scheme should be the default color scheme option when we start the application the first time and config.toml gets generated. It should be on top of the color scheme list and should inherit the colors from the KDE, Gnome, Cosmic, Xfce desktop
 
-3) Add to the fonts list a special option on the top of the list called: "Theme default" which will try to use the hardcoded theme option. In the config.toml we don't save it like this, but instead we save the font name which was hardcoded.
+3) There should be a second color group defined for each buttongroup called "alt" , which is the 2nd toggled state fill, label, border colors in all 3 states: resting, hover, pressed. Call it for example: science_alt or equals_alt or percent_alt.
 
-4) If the font defined in the config.toml does not exist (because the user mistyped it when editing the config file, or just simply the default hardcoded font is not installed) then we choose the system's general font
+4) I have changed the application name from cosmic calc to just "Calc" . Please update all documentation, comments, source code that refers to cosmic calc. But of course we still use libcosmic.
 
-5) There should be a 4th column for the colors for the button groups, which is the 2nd toggled state fill, font, border colors. Every button group should have this, even if there is no secondary function assigned for them, since the layout can be changed. The "second" button group which hosts the "2nd" button should get it's toggled color from this column instead how it is done right now (it is not exposed in the config, but somehow derived (maybe inverted) from the existing colors).
 
-6) Rename "debug_raw_formula" to "ascii_mode" in the config.toml
+------------------------------
+STAGE 2 Fixing code structure:
+------------------------------
 
-7) When the user pastes something from the clipboard check the contents before deciding how to paste it. If it has operators and other stuff then overwrite what is on the current display (current behavior). If it's a number (with or without a decimal dot or comma) then just paste it as an operand, so in this case if the user already types "52" then the pasted number should replace that, but if the user typed "52+" then it should come after the plus sign. So the last operand (empty or not) should be from the clipboard if its a number. If it's a too big number, then silently ignore the paste (I think this is the current behavior but test it).
+1) Simplify the code to be easier to understand by a human. For example I don't understand what is the point having lib.rs or ast.rs gamma.rs mod.rs separately when they barely have any content.
 
-8) The font size scaling is not accurate. This might be because it depends on the font itself, but we should always use the available horizontal and vertival space efficiently regardless of which font is used. Right now if I paste in a really long number e.g.: "99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999" it will be smaller than it should be and only using about 80% of the horizontal space. Also, some fonts which have italic effect by default on the regular weight (e.g. Monte Carlo) will go out from the main display area on the right (the first character). It looks like the bottom of the font is correctly aligned but the top is not checked.
+2) Rearrange the folder structure like this: (right now there are two separate src folders and the tests are under core, while the tests should not be complied into the final binary, so it is a mess right now.
 
-9) Add a slider in the settings side panel which configures when we change to scientific notation. The range should be 2 - 99 (default 15). Of course this needs to saved in config.toml as well.
+calc/
+├── Cargo.toml
+├── Cargo.lock
+├── README.md
+├── CLAUDE.md
+├── LICENSE
+├── .gitignore
+│
+├── src/
+│   ├── main.rs               # entry point, sets up eframe/egui App
+│   ├── core/                 # business logic, no egui/eframe deps
+│   │   ├── mod.rs
+│   │   └── ...
+│   ├── gui/                  # egui views, widgets, app state
+│   │   ├── mod.rs
+│   │   ├── app.rs            # implements eframe::App
+│   │   └── views/
+│   └── translations/         # translations loading logic
+│       └── mod.rs
+│
+├── assets/
+│   ├── icons/
+│   │   └── icon.svg
+│   └── translations/         # actual translation files
+│       ├── en.ftl
+│       ├── de.ftl
+│       ├── es.ftl
+│       ├── it.ftl
+│       ├── pt.ftl
+│       ├── se.ftl
+│       ├── no.ftl
+│       ├── da.ftl
+│       ├── fi.ftl
+│       ├── hu.ftl
+│       ├── pl.ftl
+│       ├── cz.ftl
+│       └── fr.ftl
+│
+├── tests/
+│   ├── core_tests.rs        # integration tests (Cargo convention)
+│   └── common/
+│       └── mod.rs
+│
+└── packaging/
+    ├── debian/
+    │   ├── control
+    │   ├── rules
+    │   ├── changelog
+    │   ├── compat
+    │   └── calc.desktop
+    ├── fedora/
+    │   ├── calc.spec
+    │   └── calc.desktop
+    └── flatpak/
+        ├── io.github.yourname.calc.yml            # flatpak-builder manifest
+        ├── io.github.yourname.calc.desktop
+        └── io.github.yourname.calc.metainfo.xml   # AppStream metadata, required for Flathub
 
-10) Why the application does not appear in the applications list in KDE System monitor? I can only find it among the processes.
+3) Generate an SVG icon for the calculator.
 
-11) I have changed the application name from cosmic calc to just "Calc" . Please update all documentation, comments, source code that refers to cosmic calc. But of course we still use libcosmic.
+4) Add packaging methods for: debian DEB, fedora RPM, FlatPak packages and use the assets/icons/icon.svg for all three.
 
-12) Add Translation support: Only for UI elements e.g.: "History", "Scientific mode", "Decimal Separator" and error messages e.g.: "Undefined: Negative number under even root". Autodetect system language on first startup and save it in config.toml. Add GUI option in settings to be able to change it.
 
-13) Remove as many dependencies as possible, so the package can work longer even if the distro repo changes underlying libs
+------------------------------------
+STAGE 3: Changing libcosmic to egui:
+------------------------------------
+
+1) Just answer this questions without changing anything: What would be the pros/cons for changing libcosmic to egui?
+ - Would the app be faster to launch? Would it be more lightweight on a very slow (rpi) computer?
+ - Would it make the code less complicated? egui is immediate-mode and by default repaints every frame so we need to configure it to only repaint on input/events (ctx.request_repaint(), but this is the only complication compared to libcosmic (which is event based and not redrawing if nothing is pressed).
+ - Could it still handle the fonts, color schemes, superscript/subscript alignment, transparency
+ - How would be the RAM usage, because right now it uses ~130MB RAM which is a bit high for a small 20MB calculator. egui uses less memory and produces probably a smaller executable because less dependencies are pulled in. libcosmic: Elm-style architecture requires to define a Message enum for every event (digit presses, operators, clear, etc.), implement update() to mutate state per message, and a separate view() to build the widget tree from state, plus the cosmic::Application trait boilerplate (init, title, etc.). So probably we can get rid of all that with libcosmic.
+ - Can we just skip GPU acceleration to have simpler codebase and faster startup and use egui with "tiny-skia" instead? I still want to use the KDE Plasma or Cosmic Desktop blur effect, but the compositor should do the GPU accelerated blur effect. I think egui needs to request this, it's probably not enough to just make the background transparent.
+
+2) The startup time of the application could be optimized to be much faster. It's just a lightweight calculator so I want it to open instantly.
+Ideas:
+ - Maybe the font list loading slows it down as it needs to read through many external files. If it's something which is only visible in the settings then please make the app startup faster and grey out the settings option until their contents (e.g. fonts list) are loaded. Of course the app needs to load the font which is currently used, but that's the only font we need to launch the application quickly.
+ - Does libcosmic add to the application startup delay? I assume egui without gpu acceleration would be much more lightweight and fast to startup, right? I want it to be super fast even on a RaspberryPi
+ - The executable binary is around 20MB which is a lot for a small calculator. It probably has lots of bloat, so please get rid of the dead code and consider adding strip = true and lto = true and opt-level = "z" vs "3" and panic = "abort" and make sure we don't use UPX compression. You can evaluate these options and discover new ones as well to optimize for the fastest cold startup possible. Also check for enabled features you don't use — many crates have optional features (like full on tokio) that you can disable via default-features = false and picking only what you need.
+ - Reduce dependencies where possible. E.g.: Switch to the musl target to get rid of glibc dependency. musl libc is statically linked, so there's no runtime dependency on the host's C library at all this way.
+```rustup target add x86_64-unknown-linux-musl
+cargo build --release --target x86_64-unknown-linux-musl```
+ - Big contributors to bloat are often:
+  a) Async runtimes (tokio) — if you don't need async, drop it
+  b) Regex, serde with derive, clap with all features — these can pull in a lot of generated code
+  c) Run cargo bloat --release (install with cargo install cargo-bloat) to see exactly which crates/functions are eating the space
+
+3) Implement negotiation of xdg-decoration protocol so KDE Kwin, Gnome Mutter, Xfce xfwl4 can use their own window decoration. We can maybe save this in the config.toml, so we don't need to run the negotiation every time we start the application. Do whatever is faster for the app startup. Maybe negotiation is needed every time we start, I don't know.
+
+
+----------------------
+STAGE 4: Fixing fonts:
+----------------------
+
+1) Some fonts which have italic effect by default on the regular weight (e.g. Monte Carlo or Vivaldi) will go out from the main display area on the right (the first character). It looks like the bottom of the font is correctly aligned but the top is not checked.
+
+2) The vertical alignment of the fonts needs to be fixed as well. To make it work for most fonts we should align the characters to a middle line, because I want to see the numbers to be aligned vertically in the middle when they are in between brackets. We should not do it on a character basis, because I don't want "log" or "tan" to have misaligned letters, so come up with something clever here.
+
+3) The font size scaling is not accurate. This might be because it depends on the font itself, but we should always use the available horizontal and vertical space efficiently regardless of which font is used. Right now if I paste in a really long number e.g.: "99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999" it will be smaller than it should be and only using about 80% of the horizontal space.
+
+4) The "Recommended" text should be removed from the font list and the whole "recommended" font list and related code should be removed as well. Instead, we should write "Theme default" in the same place where "Recommended" was for the single font which is hardcoded for the currently selected theme.
+
+5) If the font defined in the config.toml does not exist (because the user mistyped it when editing the config file, or just simply the default hardcoded font is not installed) then we choose the system's general font
+
+
+--------------------
+STAGE 5: Misc fixes:
+--------------------
+
+1) When the user pastes something from the clipboard check the contents before deciding how to paste it. If it has operators and other stuff then overwrite what is on the current display (current behavior). If it's a number (with or without a decimal dot or comma) then just paste it as an operand, so in this case if the user already types "52" then the pasted number should replace that, but if the user typed "52+" then it should come after the plus sign. So the last operand (empty or not) should be from the clipboard if its a number. If it's a too big number, then silently ignore the paste (I think this is the current behavior but test it).
+
+2) Add a toggle for scientific notation (default ON). Of course this needs to saved in config.toml as well.
+
+3) Why the application does not appear in the applications list in KDE System monitor? I can only find it among the processes. Maybe because it was not installed as a normal package?
+
+4) Add Translation support: Only for UI elements e.g.: "History", "Scientific mode", "Decimal Separator" and error messages e.g.: "Undefined: Negative number under even root". Autodetect system language on first startup and save it in config.toml. Add GUI option in settings to be able to change it.
 
 ---------------------------------------
 
-Just answer this questions without changing anything: What would be the pro/con for changing libcosmic to egui? Would the app be faster to launch? Would it be more lightweight on a very slow (rpi) computer? Would there be less complicated code? Could it still handle the fonts, color schemes, superscript, subscript, transparency?
-How about memory use, because right now it uses ~130MB RAM which is a bit high for a small app like this!
-Can we just skip GPU acceleration to have simpler codebase and faster startup and use "tiny-skia" instead? egui is immediate-mode and by default repaints every frame so we need to configure it to only repaint on input/events (ctx.request_repaint(), but this is the only complication compared to libcosmic (which is event based and not redrawing if nothing is pressed). egui uses less memory as well and produces probably a smaller executable because less dependencies are pulled in. libcosmic: Elm-style architecture requires to define a Message enum for every event (digit presses, operators, clear, etc.), implement update() to mutate state per message, and a separate view() to build the widget tree from state, plus the cosmic::Application trait boilerplate (init, title, etc.). So probably we can get rid of all that.
 
-The startup time of the application could be optimized to be much faster. It's just a lightweight calculator so I want it to open instantly.
-- Maybe the font list loading slows it down or something else, but if it's something which is only visible in the settings side panel then please make the app faster to open and just grey out the settings button until their contents (e.g. font list are loaded.
-- Does libcosmic add to the application startup delay? I assume egui without gpu acceleration would be much more lightweight and fast to startup, right? I want it to be super fast even on a RaspberryPi
-- The executable binary is around 20MB which is a lot for a small calculator. It probably has lots of bloat, so please get rid of the dead code and consider adding strip = true and lto = true and opt-level = "z" and panic = "abort" and make sure we don't use UPX compression. You can evaluate these options and discover new ones as well to optimize for the fastest cold startup possible. Also check for enabled features you don't use — many crates have optional features (like full on tokio) that you can disable via default-features = false and picking only what you need. Reduce dependencies, Big contributors to bloat are often:
- - Async runtimes (tokio) — if you don't need async, drop it
- - Regex, serde with derive, clap with all features — these can pull in a lot of generated code
- - Run cargo bloat --release (install with cargo install cargo-bloat) to see exactly which crates/functions are eating the space
 
 
 TODO in future:
- - Implement negotiation of xdg-decoration protocol so KDE Kwin, Gnome Mutter, Xfce xfwl4 can use their own window decoration. We can maybe save this in the config.toml, so we don't need to run the negotiation every time we start the application. Do whatever is faster for the app startup.
- - Implement cosmic frosted glass effect (blur) from the desktop environment
+
+ - Implement cosmic frosted glass effect (blur) or KDE Blur from the desktop environment. Make the background transparency toggle-able (but not the buttons transparency)
  - Implement neon glow effect for the button borders so it shines around its area a little bit
- - Create svg icon that can be used for packaging
- - Don't mention hackable in readme if desktop color inheritance works. Don't expose colors in config.toml.
+ - Implement pill shape iOS style toggles
+ - Remove Readme: hackable (if desktop color inheritance works. we won't expose colors in config.toml)
  - Add Readme: Lightweight: using egui and optimized for quick startup
  - Add Readme: supports xdg-decoration protocol which enables Wayland compositors (Kwin, Mutter, xfw14, cosmic-comp) to draw their own window decoration
  - Add Readme: Detects system theme colors and matches them in the "Inherit Desktop" color scheme
-
-
-At a later more mature stage:
  - Look for vulnerabilities, attack vectors in the code. Especially when we paste something from the clipboard and read the config.toml and load the fonts. These are the points where an attacker can inject malicious code.
- - Simplify the code to be easier to understand by a human. For example I don't understand what is the point having lib.rs or ast.rs gamma.rs mod.rs separately when they barely have any content.
- - Add packaging methods for: deb rpm flatpak
+ 
