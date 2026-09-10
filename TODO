@@ -10,6 +10,7 @@ STAGE 1 Fixing themes:
 "Army" with "ArmyChalk" font and green/brown color palette with white text
 "Matrix" with "JetBrains Mono" font and green #53dc52 color over black background
 "Sandstone" with "Roboto Slab" font and color palette: #D0C9BF #C4BBAE #BAAB9B #AB9680 #998570 #876E56
+"Monokai" with "Noto Sans Math" font and color palette: 
 "Inherit Desktop" should auto detect the system's general font. This color scheme should be the default color scheme option when we start the application the first time and config.toml gets generated. It should be on top of the color scheme list and should inherit the colors from the KDE, Gnome, Cosmic, Xfce desktop
 
 4) Restructure the color definitions in presets.rs to include the 2nd toggled (alt) state for every button group and make it more compact by removing the "#" from the color codes. I want a very compact color definition table so please change the rgba to accept two colors like this (also change the header comments to include ",alt"):
