@@ -17,19 +17,17 @@
  - Entering sqrt or sin operation needs to come before the operand, but what if you want to apply it on the result of your previous calculation? You cannot do that and this is a very common scenario. Apple calculator does this in a smart way that allows these functions both before or after depending on the context, so it somehow always does what the user would expect.
  - Representing degree of a root or power or base of logarithm is working in an ugly and hard-to-read ASCII way most of the time and it is either incredibly cumbersome to enter an expression into these places or outright impossible.
    
- 
-
 ## Features:
 
 - Written purely in Rust. No dependencies or wrappers for C or Python
-- Focusing on simplicity and ease-of-use: Does what you would expect from a calculator
-- Logical and aesthetic layout: Superscript & subscript display, predefined themes, user configurable fonts and button shapes
-- Stateful operation for an intuitive workflow: can repeat the last operation or use backspace to delete backwards
-- Hackable button layout via editing config.toml
-- Proper error messages
-- Intuitive context dependent user input with subscript/superscript support
 - Decimal arithmetic for basic operations, so `0.1 + 0.2 - 0.3` or `0.3 % 0.1` results in exactly `0`
 - IEEE 754 f64 for transcendental functions (trigonometry, exponentials, logarithms, roots) which gives 15–17 significant decimal digits precision
+- Focusing on simplicity and ease-of-use: Does what you would expect from a calculator
+- Logical and aesthetic layout: 20 predefined themes, user configurable fonts and button shapes
+- Stateful operation for an intuitive workflow: can repeat the last operation or use backspace to delete backwards
+- Intuitive context dependent user input with subscript/superscript support
+- Hackable button layout via editing config.toml
+- Proper error messages
 
 ## Recommended fonts to install:
 
