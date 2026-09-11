@@ -16,6 +16,7 @@
  - Gnome Calculator is missing useful function buttons like: `sqrt`, `1/x`, `+/-` sure you can type in `sqrt()` but that is why this is an expression solver and not a calculator.
  - Entering sqrt or sin operation needs to come before the operand, but what if you want to apply it on the result of your previous calculation? You cannot do that and this is a very common scenario. Apple calculator does this in a smart way that allows these functions both before or after depending on the context, so it somehow always does what the user would expect.
  - Representing degree of a root or power or base of logarithm is working in an ugly and hard-to-read ASCII way most of the time and it is either incredibly cumbersome to enter an expression into these places or outright impossible.
+ - Window scaling is either not possible (MATE Calc) or doesn't scale the text proportionally with the buttons (galculator) or doesn't scale the buttons at all (Gnome Calc). KCalc does it somewhat correctly, though the Deg/Rad switcher and expression display area does not scale.
    
 ## Features:
 
