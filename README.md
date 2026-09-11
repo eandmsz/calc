@@ -1,7 +1,7 @@
 # Calc - a scientific calculator focusing on user experience
 
 ## Why we need a better calculator for Linux:
- Because none of the Linux calculators (Kcalc, Gnome Calculator, Galculator, MATE Calculator) match the macOS or Windows calculator's user experience and I'm tired of raising issues to them which will never get fixed because it would either require too much work or it goes straigth against their design philoshopy.
+ Because none of the Linux calculators (Kcalc, Gnome Calculator, Galculator, MATE Calculator) match the macOS or Windows calculator's user experience and I'm tired of raising issues to them which will never get fixed because it would either require too much work or it goes against their design philoshopy.
  
  A few examples (all of these are addressed by this calculator):
  - They are all trying to fit in into their desktop environment and therefore using the standard (Qt/GTK) buttons, radio buttons, drop-down menus etc. This does not give a good user experience in most cases. There is a reason why Apple - who is very much into getting all applications to look and behave the same across the desktop - gave a distinct look and button behaviour to their calculator.
