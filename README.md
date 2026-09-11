@@ -18,7 +18,6 @@
  - Army: ArmyChalk
  - Cosmic: Open Sans
  - Texas: Consolas
- - Tokyo: Noto Sans
  - Cyberpunk: Adwaita Mono
  - Plastic: Comfortaa
  - Crystal: Cantarell
