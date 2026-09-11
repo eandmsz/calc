@@ -23,10 +23,9 @@
 
 - Written purely in Rust. No dependencies or wrappers for C or Python
 - Focusing on simplicity and ease-of-use: Does what you would expect from a calculator
-- Logical and aesthetic layout: Superscript & subscript display, predefined themes, configurable fonts and shapes
+- Logical and aesthetic layout: Superscript & subscript display, predefined themes, user configurable fonts and button shapes
 - Stateful operation for an intuitive workflow: can repeat the last operation or use backspace to delete backwards
 - Hackable button layout via editing config.toml
-- 20 carefully crafted themes with user configurable font and button shape
 - Proper error messages
 - Intuitive context dependent user input with subscript/superscript support
 - Decimal arithmetic for basic operations, so `0.1 + 0.2 - 0.3` or `0.3 % 0.1` results in exactly `0`
