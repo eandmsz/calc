@@ -31,7 +31,7 @@
 
 ## Recommended fonts to install:
 
- - Cupertino: SF Pro Display
+ - Cupertino: [SF Pro Display](https://www.cufonfonts.com/font/sf-pro-display) 
  - Redmond: Segoe UI
  - Wolfenstein: zilverstone eYe/FS
  - Army: ArmyChalk
