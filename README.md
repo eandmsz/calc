@@ -2,6 +2,7 @@
 
 ## Why we need a better calculator for Linux:
  Because none of the Linux calculators (Kcalc, Gnome Calculator, Galculator, MATE Calculator) match the macOS or Windows calculator's user experience. They are all trying to fit in into their desktop environment and therefore using the standard (Qt/GTK) buttons, radio buttons, drop-down menus etc. This does not give a good user experience in most cases and I'm tired of raising these issues to them which will never get fixed because it would either require too much work or it goes straigth against their design philoshopy.
+ 
  A few examples:
  - None of the Linux calculators above are stateful which means e.g. you cannot simply repeat the last operation by pressing equals sign repeatedly (as you would do on a real calculator)
  - All of the Linux calculators above let you to enter malformed expressions e.g.: `8++1` which will result in an error.
