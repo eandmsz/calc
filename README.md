@@ -20,7 +20,7 @@
    
 ## Features:
 
-- Written purely in Rust. No dependencies or wrappers for C or Python
+- Written purely in Rust, using the egui and complied with musl target to have a portable executable that works on any Linux. No dependencies or wrappers for C or Python, no glibc version dependency.
 - Decimal arithmetic for basic operations, so `0.1 + 0.2 - 0.3` or `0.3 % 0.1` results in exactly `0`
 - IEEE 754 f64 for transcendental functions (trig, log, exponentials, roots) which gives 15–17 significant decimal digits precision
 - Focusing on simplicity and ease-of-use: Does what you would expect from a calculator
