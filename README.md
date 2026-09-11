@@ -24,7 +24,7 @@
 - IEEE 754 f64 for transcendental functions (trig, log, exponentials, roots) which gives 15–17 significant decimal digits precision
 - Focusing on simplicity and ease-of-use: Does what you would expect from a calculator
 - Intuitive context dependent user input with subscript/superscript support
-- Stateful operation for an intuitive workflow: can repeat the last operation, functions are context dependent therefore e.g. sqrt can be inserted both before or after an operand
+- Stateful operation for an intuitive workflow: can repeat the last operation, functions are context dependent therefore e.g. sqrt can be applied both before or after an operand
 - Logical and aesthetic layout with 20 predefined themes, user configurable fonts and button shapes
 - Hackable button layout via editing config.toml
 - Proper error messages
