@@ -2,7 +2,7 @@
 
 ## Features:
 
-- Written purely in Rust, using the egui and complied with musl target to have a portable executable that works on any Linux. No dependencies or wrappers for C or Python, no glibc version dependency.
+- Written purely in Rust, using egui and complied with musl target to have a portable executable that works on any Linux. No dependencies or wrappers for C or Python, no glibc version dependency.
 - Decimal arithmetic (38 significant digits precision) for rational numbers and IEEE 754 for irrational numbers (15 significant digits precision).
 - Focusing on simplicity and ease-of-use: Does what you would expect from a calculator
 - Intuitive context dependent user input with subscript/superscript support
