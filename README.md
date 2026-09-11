@@ -32,20 +32,20 @@
 ## Recommended fonts to install:
 
  - Cupertino: [SF Pro Display](https://www.cufonfonts.com/font/sf-pro-display) 
- - Redmond: Segoe UI
- - Wolfenstein: zilverstone eYe/FS
- - Army: ArmyChalk
- - Cosmic: Open Sans
- - Texas: Consolas
- - Cyberpunk: Adwaita Mono
- - Plastic: Comfortaa
- - Crystal: Cantarell
+ - Redmond: [Segoe UI](https://www.cufonfonts.com/font/segoe-ui-4)
+ - Wolfenstein: [zilverstone eYe/FS]
+ - Army: [ArmyChalk]
+ - Cosmic: [Open Sans]
+ - Texas: [Consolas]
+ - Cyberpunk: [Adwaita Mono]
+ - Plastic: [Comfortaa]
+ - Crystal: [Cantarell]
  - Barbie:
- - Emerald: Cambria
- - Flat: Trebuchet MS
- - Matrix: JetBrains Mono
- - Sandstone: Roboto Slab
- - Monokai: Noto Sans Math
+ - Emerald: [Cambria]
+ - Flat: [Trebuchet MS]
+ - Matrix: [JetBrains Mono]
+ - Sandstone: [Roboto Slab]
+ - Monokai: [Noto Sans Math]
 
 If a font is  missing, the default general system font will be used or the one you select
 
