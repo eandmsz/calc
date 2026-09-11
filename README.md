@@ -22,7 +22,7 @@
 ## Features:
 
 - Written purely in Rust. No dependencies or wrappers for C or Python
-- Focusing on simplicity and ease-of-use: Does what you would expect from a calculator, nothing more or less
+- Focusing on simplicity and ease-of-use: Does what you would expect from a calculator
 - Logical and aesthetic layout: Superscript & subscript display, predefined themes, configurable fonts and shapes
 - Stateful operation for an intuitive workflow: can repeat the last operation or use backspace to delete backwards
 - Hackable button layout via editing config.toml
