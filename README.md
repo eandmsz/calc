@@ -33,9 +33,9 @@
 
  - Cupertino: [SF Pro Display](https://www.cufonfonts.com/font/sf-pro-display) 
  - Redmond: [Segoe UI](https://www.cufonfonts.com/font/segoe-ui-4)
- - Wolfenstein: [zilverstone eYe/FS]
- - Army: [ArmyChalk]
- - Cosmic: [Open Sans]
+ - Wolfenstein: [zilverstone eYe/FS](https://fontstruct.com/fontstructions/show/485705/zilverstone_eye_fs)
+ - Army: [ArmyChalk](https://www.fontspace.com/armychalk-font-f9494)
+ - Cosmic: [Open Sans](https://www.fontspace.com/open-sans-font-f22353)
  - Texas: [Consolas]
  - Cyberpunk: [Adwaita Mono]
  - Plastic: [Comfortaa]
