@@ -11,7 +11,7 @@ Remove "Tokyo" color scheme
 Add "Army" with "ArmyChalk" font and green/brown color palette with white text
 Add "Matrix" with "JetBrains Mono" font and green #53dc52 color over black background
 Add "Sandstone" with "Roboto Slab" font and color palette: #D0C9BF #C4BBAE #BAAB9B #AB9680 #998570 #876E56
-Add "Monokai" with "Noto Sans Math" font and color palette: 
+Add "Monokai" with "Noto Sans Math" font and color palette: #272822 #f8f8f2 #878b9180 #1e1f1c #3e3d32 #90908a #414339 #464741 #f8f8f2 #ccccc7 #e6db74 #464741 #fd971f #e6db74 #f92672 #a6e22e
 Add "Inherit Desktop" should auto detect the system's general font. This color scheme should be the default color scheme option when we start the application the first time and config.toml gets generated. It should be on top of the color scheme list and should inherit the colors from the KDE, Gnome, Cosmic, Xfce desktop
 
 4) Restructure the color definitions in presets.rs to include the 2nd toggled (alt) state for every button group and make it more compact by removing the "#" from the color codes. I want a very compact color definition table so please change the rgba to accept two colors like this (also change the header comments to include ",alt"):
