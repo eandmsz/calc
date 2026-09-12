@@ -9,8 +9,10 @@
 - Intuitive context dependent user input with subscript/superscript support.
 - Stateful operation for an intuitive workflow: can repeat the last operation, functions are context dependent therefore e.g. `√` or `sin` can be applied both before or after an operand.
 - Logical and aesthetic layout with 20 carefully crafted themes, user configurable fonts and button shapes.
+- Configurable decimal and thousands separator.
 - Hackable button layout via editing config.toml.
 - Proper error messages.
+
 
 ## Recommended fonts to install for the themes:
 
@@ -50,7 +52,7 @@ If a font is  missing, the default general system font will be used or the one y
  - Entering sqrt or sin operation needs to come before the operand, but what if you want to apply it on the result of your previous calculation? You cannot do that and this is a very common scenario. Apple calculator does this in a smart way that allows these functions both before or after depending on the context, so it somehow always does what the user would expect.
  - Representing degree of a root or power or base of logarithm is working in an ugly and hard-to-read ASCII way most of the time and it is either incredibly cumbersome to enter an expression into these places or outright impossible.
  - Window scaling is either not possible (MATE Calc) or doesn't scale the text proportionally with the buttons (galculator) or doesn't scale the buttons at all (Gnome Calc). KCalc does it somewhat correctly, though the Deg/Rad switcher and expression display area does not scale.
- - galculator doesn't support decimal arithmetic and therefore fails the `0,1+0,2-0,3=0` test.
+ - galculator doesn't support decimal arithmetic and therefore fails the `0.1 + 0.2 - 0.3 = 0` test.
 
 ## Decimal Arithmetic (i128) vs Floating Point IEEE 754 (f64)
 
