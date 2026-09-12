@@ -1,3 +1,6 @@
+libcosmic buttons radius how is it done? are the buttons in egui also configurable themable, or we need to implement our own button?
+what if the radius is connected to the button width and not the height?
+
 
 ----------------------
 STAGE 1 Fixing themes:
