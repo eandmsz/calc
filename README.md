@@ -1,4 +1,4 @@
-# Calc - a scientific calculator focusing on user experience
+# CalcRS - a scientific calculator focusing on user experience
 
 ## Features:
 
