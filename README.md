@@ -38,7 +38,7 @@ If a font is  missing, the default general system font will be used or the one y
 
  Because none of the Linux calculators (KCalc, Gnome Calculator, Galculator, MATE Calculator) match the macOS or Windows calculator's user experience and I'm tired of raising issues to them which will never get fixed because it would either require too much work or it goes against their design philoshopy.
  
- A few examples (all of these are addressed by this calculator):
+ A few examples (all of these problems are addressed by this calculator):
  - They are all trying to fit in into their desktop environment and therefore using the standard (Qt/GTK) buttons, radio buttons, drop-down menus etc. This does not give a good user experience in most cases. There is a reason why Apple (who is very much into UI consistency) gave a distinct look and button behaviour to their calculator.
  - None of the Linux calculators above are stateful which means e.g. you cannot simply repeat the last operation by pressing equals sign (or just enter) repeatedly (as you would do on a real calculator). This is because they are all expression solvers rather than calculators.
  - KCalc, Gnome Calc, MATE Calc lets you to enter `8+++1` which will result in a `Malformed expression`. (Galculator doesn't allow expressions to be entered)
