@@ -53,7 +53,7 @@ If a font is  missing, the default general system font will be used or the one y
  - Representing degree of a root or power or base of logarithm is working in an ugly and hard-to-read ASCII way most of the time and it is either incredibly cumbersome to enter an expression into these places or outright impossible.
  - Window scaling is either not possible (MATE Calc) or doesn't scale the text proportionally with the buttons (galculator) or doesn't scale the buttons at all (Gnome Calc). KCalc does it somewhat correctly, though the Deg/Rad switcher and expression display area does not scale.
  - galculator doesn't support decimal arithmetic and therefore fails the `0.1 + 0.2 - 0.3 = 0` test.
- - KCalc continuously evaluating the entered expression, which might sound like a good idea at first, but the problem is that you enter `5 + 3` and you see the result `8` on the screen. Then you enter `/2` and you would expect it will calculate `8 / 2` but instead of `4` you will get `6.5` because you are still editing the original expression
+ - KCalc continuously evaluating the entered expression, which might sound like a good idea at first, but the problem is that you enter `5 + 3` and you see the result `8` on the screen. Then you enter `/2` and you would expect it will calculate `8 / 2` but instead of getting `4` you will get `6.5` because you are still editing the original expression
 
 ## Decimal Arithmetic (i128) vs Floating Point IEEE 754 (f64)
 
