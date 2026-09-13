@@ -1,4 +1,4 @@
-# CalcRS - a scientific calculator focusing on user experience
+# CalcRS - Scientific calculator written in Rust
 
 ## Features:
 
