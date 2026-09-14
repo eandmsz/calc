@@ -3,7 +3,7 @@ what if the radius is connected to the button width and not the height?
 leave the settings side menu and instead use a hamburger menu which puts the menus into one place: preferences, themes, about
 toggle "show angle mode and memory buttons" separately in basic and scientific mode
 toggle for show memory contents should be disabled when memory buttons are not visible
-Make theme colors configurable within the app itself
+Make theme colors configurable within the app itself with #RGBA format, if A is omitted then use FF automatically
 
 think about: what to do with memory contents? Maybe better to put it back in history?
 
