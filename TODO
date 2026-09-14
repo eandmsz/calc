@@ -1,7 +1,7 @@
 libcosmic buttons radius how is it done? are the buttons in egui also configurable themable, or we need to implement our own button?
 leave the settings side menu and instead use a hamburger menu which puts the menus into one place: preferences (toggles, random config separator character config, themes (color schemes, fonts, button radius), about (sw version, author, github page, license)
 toggle for show memory contents should be disabled when memory buttons are not visible, or rather: think about: what to do with memory contents? Maybe better to put it back in history?
-
+how do we use the accent color from the desktop? We need a way to calculate hover/pressed color from it. Shall we put "accent" in the color field as override? Shall we have a tick box next to each row?
 
 Notes:
 FONTS TO BE USED:
