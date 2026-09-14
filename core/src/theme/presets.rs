@@ -51,15 +51,15 @@ pub(super) fn preset(kind: ThemeKind) -> Theme {
             ),
             second: ButtonColors::grid(
                 //               resting            hover              pressed
-                StateColors::new(rgba("#3E4247FF"), rgba(""), rgba("#383B40FF")), // fill
-                StateColors::new(rgba("#D4D4D4FF"), rgba(""), rgba("#D4D4D4FF")), // label
-                StateColors::new(rgba("#D4D4D4FF"), rgba(""), rgba("#D4D4D4FF")), // border
+                StateColors::new(rgba(""), rgba(""), rgba("")), // fill
+                StateColors::new(rgba(""), rgba(""), rgba("")), // label
+                StateColors::new(rgba(""), rgba(""), rgba("")), // border
             ),
             toprow: ButtonColors::grid(
                 //               resting            hover              pressed
-                StateColors::new(rgba("#888A8BFF"), rgba(""), rgba("#7A7C7DFF")), // fill
-                StateColors::new(rgba("#D4D4D4FF"), rgba(""), rgba("#D4D4D4FF")), // label
-                StateColors::new(rgba("#D4D4D4FF"), rgba(""), rgba("#D4D4D4FF")), // border
+                StateColors::new(rgba(""), rgba(""), rgba("")), // fill
+                StateColors::new(rgba(""), rgba(""), rgba("")), // label
+                StateColors::new(rgba(""), rgba(""), rgba("")), // border
             ),
             delete: ButtonColors::grid(
                 //               resting            hover              pressed
@@ -69,9 +69,9 @@ pub(super) fn preset(kind: ThemeKind) -> Theme {
             ),
             bracket: ButtonColors::grid(
                 //               resting            hover              pressed
-                StateColors::new(rgba("#888A8BFF"), rgba(""), rgba("#7A7C7DFF")), // fill
-                StateColors::new(rgba("#D4D4D4FF"), rgba(""), rgba("#D4D4D4FF")), // label
-                StateColors::new(rgba("#D4D4D4FF"), rgba(""), rgba("#D4D4D4FF")), // border
+                StateColors::new(rgba(""), rgba(""), rgba("")), // fill
+                StateColors::new(rgba(""), rgba(""), rgba("")), // label
+                StateColors::new(rgba(""), rgba(""), rgba("")), // border
             ),
             basicop: ButtonColors::grid(
                 //               resting            hover              pressed
@@ -87,39 +87,39 @@ pub(super) fn preset(kind: ThemeKind) -> Theme {
             ),
             percent: ButtonColors::grid(
                 //               resting            hover              pressed
-                StateColors::new(rgba("#3E4247FF"), rgba(""), rgba("#383B40FF")), // fill
-                StateColors::new(rgba("#D4D4D4FF"), rgba(""), rgba("#D4D4D4FF")), // label
-                StateColors::new(rgba("#D4D4D4FF"), rgba(""), rgba("#D4D4D4FF")), // border
+                StateColors::new(rgba(""), rgba(""), rgba("")), // fill
+                StateColors::new(rgba(""), rgba(""), rgba("")), // label
+                StateColors::new(rgba(""), rgba(""), rgba("")), // border
             ),
             reciprocal: ButtonColors::grid(
                 //               resting            hover              pressed
-                StateColors::new(rgba("#3E4247FF"), rgba(""), rgba("#383B40FF")), // fill
-                StateColors::new(rgba("#D4D4D4FF"), rgba(""), rgba("#D4D4D4FF")), // label
-                StateColors::new(rgba("#D4D4D4FF"), rgba(""), rgba("#D4D4D4FF")), // border
+                StateColors::new(rgba(""), rgba(""), rgba("")), // fill
+                StateColors::new(rgba(""), rgba(""), rgba("")), // label
+                StateColors::new(rgba(""), rgba(""), rgba("")), // border
             ),
             trig: ButtonColors::grid(
                 //               resting            hover              pressed
-                StateColors::new(rgba("#3E4247FF"), rgba(""), rgba("#383B40FF")), // fill
-                StateColors::new(rgba("#D4D4D4FF"), rgba(""), rgba("#D4D4D4FF")), // label
-                StateColors::new(rgba("#D4D4D4FF"), rgba(""), rgba("#D4D4D4FF")), // border
+                StateColors::new(rgba(""), rgba(""), rgba("")), // fill
+                StateColors::new(rgba(""), rgba(""), rgba("")), // label
+                StateColors::new(rgba(""), rgba(""), rgba("")), // border
             ),
             rand: ButtonColors::grid(
                 //               resting            hover              pressed
-                StateColors::new(rgba("#3E4247FF"), rgba(""), rgba("#383B40FF")), // fill
-                StateColors::new(rgba("#D4D4D4FF"), rgba(""), rgba("#D4D4D4FF")), // label
-                StateColors::new(rgba("#D4D4D4FF"), rgba(""), rgba("#D4D4D4FF")), // border
+                StateColors::new(rgba(""), rgba(""), rgba("")), // fill
+                StateColors::new(rgba(""), rgba(""), rgba("")), // label
+                StateColors::new(rgba(""), rgba(""), rgba("")), // border
             ),
             negate: ButtonColors::grid(
                 //               resting            hover              pressed
-                StateColors::new(rgba("#888A8BFF"), rgba(""), rgba("#7A7C7DFF")), // fill
-                StateColors::new(rgba("#D4D4D4FF"), rgba(""), rgba("#D4D4D4FF")), // label
-                StateColors::new(rgba("#D4D4D4FF"), rgba(""), rgba("#D4D4D4FF")), // border
+                StateColors::new(rgba(""), rgba(""), rgba("")), // fill
+                StateColors::new(rgba(""), rgba(""), rgba("")), // label
+                StateColors::new(rgba(""), rgba(""), rgba("")), // border
             ),
             decimal: ButtonColors::grid(
                 //               resting            hover              pressed
-                StateColors::new(rgba("#585E60FF"), rgba(""), rgba("#4F5556FF")), // fill
-                StateColors::new(rgba("#D4D4D4FF"), rgba(""), rgba("#D4D4D4FF")), // label
-                StateColors::new(rgba("#D4D4D4FF"), rgba(""), rgba("#D4D4D4FF")), // border
+                StateColors::new(rgba(""), rgba(""), rgba("")), // fill
+                StateColors::new(rgba(""), rgba(""), rgba("")), // label
+                StateColors::new(rgba(""), rgba(""), rgba("")), // border
             ),
             number: ButtonColors::grid(
                 //               resting            hover              pressed
