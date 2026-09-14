@@ -228,7 +228,7 @@ STAGE 5: Misc fixes:
 TODO in future:
 
  - Implement cosmic frosted glass effect (blur) or KDE Blur from the desktop environment. Make the background transparency toggle-able (but not the buttons transparency)
- - Implement neon glow effect for the button borders so it shines around its area a little bit
+ - Implement glow effect for the button borders and texts so it shines around its area a little bit (will be used by neon and matrix themes)
  - Implement pill shape iOS style toggles
  - Remove Readme: hackable (if desktop color inheritance works. we won't expose colors in config.toml)
  - Add Readme: Lightweight: using egui and optimized for quick startup
