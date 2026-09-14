@@ -4,8 +4,10 @@ toggle "show angle mode and memory buttons" separately in basic and scientific m
 toggle for show memory contents should be disabled when memory buttons are not visible, or rather: think about: what to do with memory contents? Maybe better to put it back in history?
 wrong "-" character is used in the main display and last expression. It is okay to use regular "-" in ascii mode, but for pretty display we should use the same which is on the minus button face because the regular dash does not align well with the plus or divide symbols verticallz
 when backspace removes the closing bracket it should remove the matching opening bracket as well
+when pasting expression from clipboard it should first convert it into ASCII compatible and then apply the pretty print immediately
 
 FONTS TO BE USED:
+Font test string: e^pi*root(2,98)/1+9-6%*log(log(0,7),3)
   Special:
    Army: ArmyChalk
    Neon: Comfortaa
