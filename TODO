@@ -1,52 +1,7 @@
-libcosmic buttons radius how is it done? are the buttons in egui also configurable themable, or we need to implement our own button?
-leave the settings side menu and instead use a hamburger menu which puts the menus into one place: preferences (toggles, random config separator character config, themes (color schemes, fonts, button radius), about (sw version, author, github page, license)
-toggle for show memory contents should be disabled when memory buttons are not visible, or rather: think about: what to do with memory contents? Maybe better to put it back in history?
-how do we use the accent color from the desktop? We need a way to calculate hover/pressed color from it. Shall we put "accent" in the color field as override? Shall we have a tick box next to each row?
+Check the code base and answer this question:
+ How is the libcosmic buttons radius is done? Are the buttons in egui also configurable themable, or we need to implement our own button to get the same look in egui than what we have currently with libcosmic?
 
-restore default settings button
-
-Notes:
-FONTS TO BE USED:
 Font test string: sin(pi)+cos(e)*9-6/root(log(log(3,2),7),98)*(2^2^2)^5%
-  Special:
-   Army: ArmyChalk
-   Neon: Comfortaa
-   Handwritten: Fair Prosper
-   Wolfenstein: zilverstone eys-fs
-  Talpas:
-   Sandstone: Roboto Slab: embossed
-   Matrix: JetBrains Mono: szögletes, homogén
-   STIX TWO Math: van e, 4es nem talpas de az 1es igen, +/- nem aligned, tul nagyok az operator karakterek
-   Libertunus Math: van e, 99%-ban olyan mint a STIX de a fenti hibáktól mentes, íves 9-es, 2es-3as pötty van a vonalvezetés végén
-   Lete Sans Math: van e, szep szogletes log/sin, ferde 9-es
-  Nem talpas:
-   Noto Sans Math: van e, egyenes L es G, felig kunkoritott 9-es
-   Fira Math: van e, gömbölyu L es G, ferde 9-es
-   Open Sans
-   Redmond: Segoe UI
-   Cupertino: SF Pro Display
-
-Recommended fonts:
-Add: 
-  STIX Two Math https://github.com/stipub/stixfonts/releases
-  Libertinus Math https://github.com/alerque/libertinus/releases
-  Fira Math https://github.com/firamath/firamath/releases
-  Helvetica Neue
-  Noto Sans Math https://github.com/notofonts/math/releases
-  Lete Sans Math https://github.com/abccsss/LeteSansMath/releases
-Remove:
-  Caladera
-  Trebuchet MS
-  Vivaldi
-  Zilverstone
-  Monteg
-  DHF Harry's Brush
-  Bahnscrift
-  Consolas
-  Comic Sans Ms
-  What about Comfortaa and Cantarell?
-
-Fonts should not apply to settings menu
 
 ----------------------
 STAGE 1 Fixing themes:
@@ -227,7 +182,7 @@ STAGE 4: Fixing fonts:
 
 4) The "Recommended" text should be removed from the font list and the whole "recommended" font list and related code should be removed as well. Instead, we should write "Theme default" in the same place where "Recommended" was for the single font which is hardcoded for the currently selected theme.
 
-5) If the font defined in the config.toml does not exist (because the user mistyped it when editing the config file, or just simply the default hardcoded font is not installed) then we choose the system's general font
+5) If the font defined in the config.toml does not exist (because the user mistyped it when editing the config file, or just simply the default hardcoded font is not installed) then we choose the system's general font. The fonts should not apply to settings menu. The settings should always use the default system font.
 
 
 --------------------
@@ -250,8 +205,8 @@ STAGE 5: Misc fixes:
 
 8) The toggle which is "show angle mode and memory buttons" should be split into two separate toggles: one for basic and one for scientific mode, so we can adjust it separately. By default it should be off for basic and on for scientific mode.
 
-TODO in future:
 
+TODO in future:
  - Implement cosmic frosted glass effect (blur) or KDE Blur from the desktop environment. Make the background transparency toggle-able (but not the buttons transparency)
  - Implement glow effect for the button borders and texts so it shines around its area a little bit (will be used by neon and matrix themes)
  - Implement pill shape iOS style toggles
@@ -260,4 +215,8 @@ TODO in future:
  - Add Readme: supports xdg-decoration protocol which enables Wayland compositors (Kwin, Mutter, xfw14, cosmic-comp) to draw their own window decoration
  - Add Readme: Detects system theme colors and matches them in the "Inherit Desktop" color scheme
  - Look for vulnerabilities, attack vectors in the code. Especially when we paste something from the clipboard and read the config.toml and load the fonts. These are the points where an attacker can inject malicious code.
+- leave the settings side menu and instead use a hamburger menu which puts the menus into one place: preferences (toggles, random config separator character config, themes (color schemes, fonts, button radius), about (sw version, author, github page, license)
+- toggle for show memory contents should be disabled when memory buttons are not visible, or rather: think about: what to do with memory contents? Maybe better to put it back in history?
+- how do we use the accent color from the desktop? We need a way to calculate hover/pressed color from it. Shall we put "accent" in the color field as override? Shall we have a tick box next to each row?
+- add a "restore default settings" button
  
