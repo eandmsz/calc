@@ -1,6 +1,11 @@
 libcosmic buttons radius how is it done? are the buttons in egui also configurable themable, or we need to implement our own button?
 what if the radius is connected to the button width and not the height?
+leave the settings side menu and instead use a hamburger menu which puts the menus into one place: preferences, themes, about
+toggle "show angle mode and memory buttons" separately in basic and scientific mode
+toggle for show memory contents should be disabled when memory buttons are not visible
+Make theme colors configurable within the app itself
 
+think about: what to do with memory contents? Maybe better to put it back in history?
 
 ----------------------
 STAGE 1 Fixing themes:
@@ -152,7 +157,7 @@ STAGE 4: Fixing fonts:
 
 2) The vertical alignment of the fonts needs to be fixed as well. To make it work for most fonts we should align the characters to a middle line, because I want to see the numbers to be aligned vertically in the middle when they are in between brackets. We should not do it on a character basis, because I don't want "log" or "tan" to have misaligned letters, so come up with something clever here.
 
-3) The font size scaling is not accurate. This might be because it depends on the font itself, but we should always use the available horizontal and vertical space efficiently regardless of which font is used. Right now if I paste in a really long number e.g.: "99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999" it will be smaller than it should be and only using about 80% of the horizontal space.
+3) The horizontal font size scaling is not accurate. We should be able to use the available horizontal and vertical space efficiently regardless of which font is used. Right now if I paste in a really long number e.g.: "99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999" it will be smaller than it should be and only using about 80% of the horizontal space. But the same thing happens if I enter 15 digits: "888888888888888", it never fills the screen to the right side, no matter how I resize the window. I think the problem might be that the extra vertical space is added above the last expression and therefore cannot be used by the main display which is below the last expression.
 
 4) The "Recommended" text should be removed from the font list and the whole "recommended" font list and related code should be removed as well. Instead, we should write "Theme default" in the same place where "Recommended" was for the single font which is hardcoded for the currently selected theme.
 
