@@ -20,17 +20,17 @@
  - Redmond: [Segoe UI](https://www.cufonfonts.com/font/segoe-ui-4)
  - Wolfenstein: [zilverstone eYe/FS](https://fontstruct.com/fontstructions/show/485705/zilverstone_eye_fs)
  - Army: [ArmyChalk](https://www.fontspace.com/armychalk-font-f9494)
- - Cosmic: [Open Sans](https://www.fontspace.com/open-sans-font-f22353)
- - Cyberpunk: [Helvetica Neue] or [Comfortaa] or [Noto Sans Math] or [Fira Sans Math]
+ - Cosmic: [Open Sans](https://github.com/googlefonts/opensans/tree/main/fonts/noto-set/ttf)
+ - Neon Glow: [Helvetica Neue] or [Comfortaa] or [Noto Sans Math] or [Fira Sans Math]
  - Plastic: [Adwaita Sans] or [Helvetica Neue]
  - Crystal: [Noto Sans Math] or [Fira Sans Math]
  - Barbie: [Fair Prosper](https://www.dafont.com/fair-prosper.font)
  - Emerald: [Adwaita Sans] or [Open Sans] or [Noto Sans Math] or [Fira Sans Math]
  - Touch: [Adwaita Sans] or [Open Sans]
- - Flat: [Lete Sans Math]
+ - Flat: [Lete Sans Math](https://github.com/abccsss/LeteSansMath/releases)
  - Matrix: [JetBrains Mono](https://github.com/JetBrains/JetBrainsMono/releases)
- - Sandstone: [Roboto Slab]
- - Monokai: [Noto Sans Math]
+ - Sandstone: [Roboto Slab](https://github.com/googlefonts/robotoslab/tree/main/fonts/otf)
+ - Monokai: [Noto Sans Math](https://github.com/notofonts/math/releases)
 
 If a font is  missing, the default general system font will be used or the one you select
 
