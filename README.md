@@ -28,7 +28,7 @@
  - Barbie:
  - Emerald: [Cambria]
  - Flat: [Trebuchet MS]
- - Matrix: [JetBrains Mono]
+ - Matrix: [JetBrains Mono](https://github.com/JetBrains/JetBrainsMono/releases)
  - Sandstone: [Roboto Slab]
  - Monokai: [Noto Sans Math]
 
