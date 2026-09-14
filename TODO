@@ -7,7 +7,7 @@ when backspace removes the closing bracket it should remove the matching opening
 when pasting expression from clipboard it should first convert it into ASCII compatible and then apply the pretty print immediately
 
 FONTS TO BE USED:
-Font test string: e^pi*root(2,98)/1+9-6%*log(log(0,7),3)
+Font test string: sin(pi)+cos(e)*9-6/root(log(log(3,2),7),98)*(2^2^2)^5%
   Special:
    Army: ArmyChalk
    Neon: Comfortaa
