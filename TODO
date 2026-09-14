@@ -1,11 +1,9 @@
 libcosmic buttons radius how is it done? are the buttons in egui also configurable themable, or we need to implement our own button?
 leave the settings side menu and instead use a hamburger menu which puts the menus into one place: preferences (toggles, random config separator character config, themes (color schemes, fonts, button radius), about (sw version, author, github page, license)
-toggle "show angle mode and memory buttons" separately in basic and scientific mode
 toggle for show memory contents should be disabled when memory buttons are not visible, or rather: think about: what to do with memory contents? Maybe better to put it back in history?
-wrong "-" character is used in the main display and last expression. It is okay to use regular "-" in ascii mode, but for pretty display we should use the same which is on the minus button face because the regular dash does not align well with the plus or divide symbols verticallz
-when backspace removes the closing bracket it should remove the matching opening bracket as well
-when pasting expression from clipboard it should first convert it into ASCII compatible and then apply the pretty print immediately
 
+
+Notes:
 FONTS TO BE USED:
 Font test string: sin(pi)+cos(e)*9-6/root(log(log(3,2),7),98)*(2^2^2)^5%
   Special:
@@ -211,15 +209,21 @@ STAGE 4: Fixing fonts:
 STAGE 5: Misc fixes:
 --------------------
 
-1) When the user pastes something from the clipboard check the contents before deciding how to paste it. If it has operators and other stuff then overwrite what is on the current display (current behavior). If it's a number (with or without a decimal dot or comma) then just paste it as an operand, so in this case if the user already types "52" then the pasted number should replace that, but if the user typed "52+" then it should come after the plus sign. So the last operand (empty or not) should be from the clipboard if its a number. If it's a too big number, then silently ignore the paste (I think this is the current behavior but test it).
+1) When the user pastes something from the clipboard check the contents before deciding how to paste it. If it has operators and other stuff then overwrite what is on the current display (which is the same as the current behavior). If it's a number (with or without a decimal dot or comma) then just paste it as an operand, so in this case if the user already types "52" then the pasted number should replace that, but if the user typed "52+" then it should come after the plus sign. So the last operand (empty or not) should be from the clipboard if its a number. If it's a too big number, then silently ignore the paste (I think this is the current behavior but test it).
 
-2) Add a toggle for scientific notation (default ON). Of course this needs to saved in config.toml as well.
+2) When pasting expression from clipboard it should first convert it into ASCII compatible (with proper "-" symbol, etc, and it should apply the pretty print immediately, so the user don't even see the ascii expression (unless the ascii display toggle is on)
 
-3) Why the application does not appear in the applications list in KDE System monitor? I can only find it among the processes. Maybe because it was not installed as a normal package?
+3) Add a toggle for scientific notation (default ON). Of course this needs to saved in config.toml as well.
 
-4) Add Translation support: Only for UI elements e.g.: "History", "Scientific mode", "Decimal Separator" and error messages e.g.: "Undefined: Negative number under even root". Autodetect system language on first startup and save it in config.toml. Add GUI option in settings to be able to change it.
+4) Why the application does not appear in the applications list in KDE System monitor? I can only find it among the processes. Maybe because it was not installed as a normal package?
 
+5) Add Translation support: Only for UI elements e.g.: "History", "Scientific mode", "Decimal Separator" and error messages e.g.: "Undefined: Negative number under even root". Autodetect system language on first startup and save it in config.toml. Add GUI option in settings to be able to change it.
 
+6) When backspace removes the closing bracket it should remove the matching opening bracket as well
+
+7) Wrong "-" character is used in the main display and last expression. It is okay to use regular "-" in ascii mode, but for pretty display we should use the same which is on the minus button face because the regular dash does not align well with the plus or divide symbols vertically
+
+8) The toggle which is "show angle mode and memory buttons" should be split into two separate toggles: one for basic and one for scientific mode, so we can adjust it separately. By default it should be off for basic and on for scientific mode.
 
 TODO in future:
 
