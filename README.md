@@ -21,13 +21,13 @@
  - Wolfenstein: [zilverstone eYe/FS](https://fontstruct.com/fontstructions/show/485705/zilverstone_eye_fs)
  - Army: [ArmyChalk](https://www.fontspace.com/armychalk-font-f9494)
  - Cosmic: [Open Sans](https://www.fontspace.com/open-sans-font-f22353)
- - Texas: [Consolas]
- - Cyberpunk: [Adwaita Mono]
- - Plastic: [Comfortaa]
- - Crystal: [Cantarell]
- - Barbie:
- - Emerald: [Cambria]
- - Flat: [Trebuchet MS]
+ - Cyberpunk: [Helvetica Neue] or [Comfortaa] or [Noto Sans Math] or [Fira Sans Math]
+ - Plastic: [Adwaita Sans] or [Helvetica Neue]
+ - Crystal: [Noto Sans Math] or [Fira Sans Math]
+ - Barbie: [Fair Prosper](https://www.dafont.com/fair-prosper.font)
+ - Emerald: [Adwaita Sans] or [Open Sans] or [Noto Sans Math] or [Fira Sans Math]
+ - Touch: [Adwaita Sans] or [Open Sans]
+ - Flat: 
  - Matrix: [JetBrains Mono](https://github.com/JetBrains/JetBrainsMono/releases)
  - Sandstone: [Roboto Slab]
  - Monokai: [Noto Sans Math]
