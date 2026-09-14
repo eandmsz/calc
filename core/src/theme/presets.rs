@@ -437,7 +437,7 @@ pub(super) fn preset(kind: ThemeKind) -> Theme {
         ThemeKind::HighContrastDark => Theme {
             id: ThemeKind::HighContrastDark,
             display_name: "High Contrast Dark".to_string(),
-            font: "Bahnschrift".to_string(),
+            font: "Noto Sans Math".to_string(),
             font_weight: FontWeight::Bold,
             button_shape: ButtonShape::Auto,
             app_bg: rgba("#242424FF"),
@@ -535,7 +535,7 @@ pub(super) fn preset(kind: ThemeKind) -> Theme {
         ThemeKind::HighContrastLight => Theme {
             id: ThemeKind::HighContrastLight,
             display_name: "High Contrast Light".to_string(),
-            font: "Bahnschrift".to_string(),
+            font: "Noto Sans Math".to_string(),
             font_weight: FontWeight::Bold,
             button_shape: ButtonShape::Auto,
             app_bg: rgba("#DBDBDBFF"),
@@ -927,7 +927,7 @@ pub(super) fn preset(kind: ThemeKind) -> Theme {
         ThemeKind::Cyberpunk => Theme {
             id: ThemeKind::Cyberpunk,
             display_name: "Cyberpunk".to_string(),
-            font: "Adwaita Mono".to_string(),
+            font: "Comfortaa".to_string(),
             font_weight: FontWeight::Regular,
             button_shape: ButtonShape::Auto,
             app_bg: rgba("#283133FF"),
@@ -1025,7 +1025,7 @@ pub(super) fn preset(kind: ThemeKind) -> Theme {
         ThemeKind::Plastic => Theme {
             id: ThemeKind::Plastic,
             display_name: "Plastic".to_string(),
-            font: "Comfortaa".to_string(),
+            font: "Adwaita Sans".to_string(),
             font_weight: FontWeight::Medium,
             button_shape: ButtonShape::Auto,
             app_bg: rgba("#283133FF"),
@@ -1123,7 +1123,7 @@ pub(super) fn preset(kind: ThemeKind) -> Theme {
         ThemeKind::Crystal => Theme {
             id: ThemeKind::Crystal,
             display_name: "Crystal".to_string(),
-            font: "Cantarell".to_string(),
+            font: "Fira Sans Math".to_string(),
             font_weight: FontWeight::Light,
             button_shape: ButtonShape::Auto,
             app_bg: rgba("#283133FF"),
@@ -1221,7 +1221,7 @@ pub(super) fn preset(kind: ThemeKind) -> Theme {
         ThemeKind::Barbie => Theme {
             id: ThemeKind::Barbie,
             display_name: "Barbie".to_string(),
-            font: "Comic Sans MS".to_string(),
+            font: "Fair Prosper".to_string(),
             font_weight: FontWeight::Regular,
             button_shape: ButtonShape::Auto,
             app_bg: rgba("#283133FF"),
@@ -1319,7 +1319,7 @@ pub(super) fn preset(kind: ThemeKind) -> Theme {
         ThemeKind::TouchLight => Theme {
             id: ThemeKind::TouchLight,
             display_name: "Touch Light".to_string(),
-            font: "SF Compact Text".to_string(),
+            font: "Adwaita Sans".to_string(),
             font_weight: FontWeight::Regular,
             button_shape: ButtonShape::Auto,
             app_bg: rgba("#283133FF"),
@@ -1417,7 +1417,7 @@ pub(super) fn preset(kind: ThemeKind) -> Theme {
         ThemeKind::TouchDark => Theme {
             id: ThemeKind::TouchDark,
             display_name: "Touch Dark".to_string(),
-            font: "SF Compact Text".to_string(),
+            font: "Open Sans".to_string(),
             font_weight: FontWeight::Regular,
             button_shape: ButtonShape::Auto,
             app_bg: rgba("#283133FF"),
@@ -1515,7 +1515,7 @@ pub(super) fn preset(kind: ThemeKind) -> Theme {
         ThemeKind::EmeraldLight => Theme {
             id: ThemeKind::EmeraldLight,
             display_name: "Emerald Light".to_string(),
-            font: "Cambria".to_string(),
+            font: "Noto Sans Math".to_string(),
             font_weight: FontWeight::Regular,
             button_shape: ButtonShape::Auto,
             app_bg: rgba("#283133FF"),
@@ -1613,7 +1613,7 @@ pub(super) fn preset(kind: ThemeKind) -> Theme {
         ThemeKind::EmeraldDark => Theme {
             id: ThemeKind::EmeraldDark,
             display_name: "Emerald Dark".to_string(),
-            font: "Cambria".to_string(),
+            font: "Fira Sans Math".to_string(),
             font_weight: FontWeight::Regular,
             button_shape: ButtonShape::Auto,
             app_bg: rgba("#283133FF"),
@@ -1711,14 +1711,14 @@ pub(super) fn preset(kind: ThemeKind) -> Theme {
         ThemeKind::FlatOrangeDark => Theme {
             id: ThemeKind::FlatOrangeDark,
             display_name: "Flat Orange Dark".to_string(),
-            font: "Trebuchet MS".to_string(),
+            font: "Lete Sans Math".to_string(),
             font_weight: FontWeight::Regular,
             button_shape: ButtonShape::Auto,
-            app_bg: rgba("#283133FF"),
-            display_bg: rgba("#283133FF"),
+            app_bg: rgba("#ffffff"),
+            display_bg: rgba("#ffffff"),
             sidepanel_bg: rgba("#283133FF"),
-            text_active: rgba("#D4D4D4FF"),
-            text_inactive: rgba("#D4D4D44D"),
+            text_active: rgba("#000000"),
+            text_inactive: rgba("#c5c5c5"),
             accent: rgba("#FF9600FF"),
             button_border_percent: 0.0,
             science: ButtonColors::grid(
@@ -1809,14 +1809,14 @@ pub(super) fn preset(kind: ThemeKind) -> Theme {
         ThemeKind::FlatGreenLight => Theme {
             id: ThemeKind::FlatGreenLight,
             display_name: "Flat Green Light".to_string(),
-            font: "Trebuchet MS".to_string(),
+            font: "Lete Sans Math".to_string(),
             font_weight: FontWeight::Regular,
             button_shape: ButtonShape::Auto,
-            app_bg: rgba("#283133FF"),
-            display_bg: rgba("#283133FF"),
+            app_bg: rgba("#000000"),
+            display_bg: rgba("#000000"),
             sidepanel_bg: rgba("#283133FF"),
-            text_active: rgba("#D4D4D4FF"),
-            text_inactive: rgba("#D4D4D44D"),
+            text_active: rgba("#ffffff"),
+            text_inactive: rgba("#5c5c5c"),
             accent: rgba("#FF9600FF"),
             button_border_percent: 0.0,
             science: ButtonColors::grid(
