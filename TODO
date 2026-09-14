@@ -9,6 +9,7 @@ Add:
   Libertinus Math https://github.com/alerque/libertinus/releases
   Fira Math https://github.com/firamath/firamath/releases
   Helvetica Neue
+  Noto Sans Math https://github.com/notofonts/math/releases
   Lete Sans Math https://github.com/abccsss/LeteSansMath/releases
 Remove:
   Trebuchet MS
@@ -17,12 +18,14 @@ Remove:
   Monteg
   DHF Harry's Brush
   Bahnscrift
-Consolas
+  Consolas
+
+Fonts should not apply to settings menu
 
 ----------------------
 STAGE 1 Fixing themes:
 ----------------------
-Add: Make theme colors configurable within the app itself with #RGBA format, if A is omitted then use FF automatically
+Add: Make theme colors configurable within the app itself with #RGBA format, if A is omitted then use FF automatically, there should be a check box for each color saying: "accent" which will inherit the desktop accent color
 
 
 1) Rename themes to color schemes in the settings GUI and "debug_raw_formula" to "ascii_mode" in config.toml
