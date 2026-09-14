@@ -3,6 +3,8 @@ leave the settings side menu and instead use a hamburger menu which puts the men
 toggle for show memory contents should be disabled when memory buttons are not visible, or rather: think about: what to do with memory contents? Maybe better to put it back in history?
 how do we use the accent color from the desktop? We need a way to calculate hover/pressed color from it. Shall we put "accent" in the color field as override? Shall we have a tick box next to each row?
 
+restore default settings button
+
 Notes:
 FONTS TO BE USED:
 Font test string: sin(pi)+cos(e)*9-6/root(log(log(3,2),7),98)*(2^2^2)^5%
@@ -96,6 +98,24 @@ If both are missing, then fallback to another group. Here is the fallback priori
   It should work with multiple levels of fallback: e.g.: if no percent color defined (neither normal nor alt): fallback to delete, if no delete color defined, fallback to science, if no science color defined either: fallback to number, if number does not have alt color defined: fallback we use the primary color
   This way we can leave most of the colors empty in a theme, while still having the ability to color some groups separately if we want to
   I hope I didn't miss any button group from the fallback rules
+
+6) Rearrange the color definitions in presets.rs to have the following order and use the same order in the GUI for the color group definition text boxes and in config.toml as well:
+number
+decimal
+negate
+basicop
+equals
+science
+delete
+percent
+second
+bracket
+toprow
+rand
+trig
+reciprocal
+
+7) Save all color schemes in config.toml when the app launches the first time and just define which color scheme is the active. The user is allowed to change the color schemes from within the GUI but not the names of them.
 
 ------------------------------
 STAGE 2 Fixing code structure:
