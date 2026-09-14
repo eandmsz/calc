@@ -4,6 +4,25 @@ toggle "show angle mode and memory buttons" separately in basic and scientific m
 toggle for show memory contents should be disabled when memory buttons are not visible, or rather: think about: what to do with memory contents? Maybe better to put it back in history?
 wrong "-" character is used in the main display and last expression. It is okay to use regular "-" in ascii mode, but for pretty display we should use the same which is on the minus button face because the regular dash does not align well with the plus or divide symbols verticallz
 
+FONTS TO BE USED:
+  Special:
+   Army: ArmyChalk
+   Neon: Comfortaa
+   Handwritten: Fair Prosper
+   Wolfenstein: zilverstone eys-fs
+  Talpas:
+   Sandstone: Roboto Slab: embossed
+   Matrix: JetBrains Mono: szögletes, homogén
+   STIX TWO Math: van e, 4es nem talpas de az 1es igen, +/- nem aligned, tul nagyok az operator karakterek
+   Libertunus Math: van e, 99%-ban olyan mint a STIX de a fenti hibáktól mentes, íves 9-es, 2es-3as pötty van a vonalvezetés végén
+   Lete Sans Math: van e, szep szogletes log/sin, ferde 9-es
+  Nem talpas:
+   Noto Sans Math: van e, egyenes L es G, felig kunkoritott 9-es
+   Fira Math: van e, gömbölyu L es G, ferde 9-es
+   Open Sans
+   Redmond: Segoe UI
+   Cupertino: SF Pro Display
+
 Recommended fonts:
 Add: 
   STIX Two Math https://github.com/stipub/stixfonts/releases
