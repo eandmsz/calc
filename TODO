@@ -1,15 +1,30 @@
 libcosmic buttons radius how is it done? are the buttons in egui also configurable themable, or we need to implement our own button?
-what if the radius is connected to the button width and not the height?
-leave the settings side menu and instead use a hamburger menu which puts the menus into one place: preferences, themes, about
+leave the settings side menu and instead use a hamburger menu which puts the menus into one place: preferences (toggles, random config separator character config, themes (color schemes, fonts, button radius), about (sw version, author, github page, license)
 toggle "show angle mode and memory buttons" separately in basic and scientific mode
-toggle for show memory contents should be disabled when memory buttons are not visible
-Make theme colors configurable within the app itself with #RGBA format, if A is omitted then use FF automatically
+toggle for show memory contents should be disabled when memory buttons are not visible, or rather: think about: what to do with memory contents? Maybe better to put it back in history?
 
-think about: what to do with memory contents? Maybe better to put it back in history?
+Recommended fonts:
+Add: 
+  STIX Two Math https://github.com/stipub/stixfonts/releases
+  Libertinus Math https://github.com/alerque/libertinus/releases
+  Fira Math https://github.com/firamath/firamath/releases
+  Helvetica Neue
+  Lete Sans Math https://github.com/abccsss/LeteSansMath/releases
+Remove:
+  Trebuchet MS
+  Vivaldi
+  Zilverstone
+  Monteg
+  DHF Harry's Brush
+  Bahnscrift
+Consolas
 
 ----------------------
 STAGE 1 Fixing themes:
 ----------------------
+Add: Make theme colors configurable within the app itself with #RGBA format, if A is omitted then use FF automatically
+
+
 1) Rename themes to color schemes in the settings GUI and "debug_raw_formula" to "ascii_mode" in config.toml
 
 2) I have changed the application name from cosmic calc to just "Calc" . Please update all documentation, comments, source code that refers to cosmic calc. But of course we still use libcosmic.
