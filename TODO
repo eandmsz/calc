@@ -49,13 +49,12 @@ STAGE 1 Fixing themes:
 ----------------------
 Add: Make theme colors configurable within the app itself with #RGBA format, if A is omitted then use FF automatically, there should be a check box for each color saying: "accent" which will inherit the desktop accent color
 
-
 1) Rename themes to color schemes in the settings GUI and "debug_raw_formula" to "ascii_mode" in config.toml
 
 2) I have changed the application name from cosmic calc to just "Calc" . Please update all documentation, comments, source code that refers to cosmic calc. But of course we still use libcosmic.
 
 3) Color schemes:
-Remove "Tokyo" color scheme
+Remove "Texas" and "Tokyo" color scheme
 Add "Army" with "ArmyChalk" font and green/brown color palette with white text
 Add "Matrix" with "JetBrains Mono" font and green #53dc52 color over black background
 Add "Sandstone" with "Roboto Slab" font and color palette: #D0C9BF #C4BBAE #BAAB9B #AB9680 #998570 #876E56
