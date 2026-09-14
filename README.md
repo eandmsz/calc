@@ -27,7 +27,7 @@
  - Barbie: [Fair Prosper](https://www.dafont.com/fair-prosper.font)
  - Emerald: [Adwaita Sans] or [Open Sans] or [Noto Sans Math] or [Fira Sans Math]
  - Touch: [Adwaita Sans] or [Open Sans]
- - Flat: 
+ - Flat: [Lete Sans Math]
  - Matrix: [JetBrains Mono](https://github.com/JetBrains/JetBrainsMono/releases)
  - Sandstone: [Roboto Slab]
  - Monokai: [Noto Sans Math]
