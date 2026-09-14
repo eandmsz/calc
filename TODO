@@ -2,6 +2,7 @@ libcosmic buttons radius how is it done? are the buttons in egui also configurab
 leave the settings side menu and instead use a hamburger menu which puts the menus into one place: preferences (toggles, random config separator character config, themes (color schemes, fonts, button radius), about (sw version, author, github page, license)
 toggle "show angle mode and memory buttons" separately in basic and scientific mode
 toggle for show memory contents should be disabled when memory buttons are not visible, or rather: think about: what to do with memory contents? Maybe better to put it back in history?
+wrong "-" character is used in the main display and last expression. It is okay to use regular "-" in ascii mode, but for pretty display we should use the same which is on the minus button face because the regular dash does not align well with the plus or divide symbols verticallz
 
 Recommended fonts:
 Add: 
