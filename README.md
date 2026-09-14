@@ -18,19 +18,20 @@
 
  - Cupertino: [SF Pro Display](https://www.cufonfonts.com/font/sf-pro-display) 
  - Redmond: [Segoe UI](https://www.cufonfonts.com/font/segoe-ui-4)
- - Wolfenstein: [zilverstone eYe/FS](https://fontstruct.com/fontstructions/show/485705/zilverstone_eye_fs)
- - Army: [ArmyChalk](https://www.fontspace.com/armychalk-font-f9494)
+ - High Contrast: 
  - Cosmic: [Open Sans](https://github.com/googlefonts/opensans/tree/main/fonts/noto-set/ttf)
- - Neon Glow: [Helvetica Neue] or [Comfortaa] or [Noto Sans Math] or [Fira Sans Math]
- - Plastic: [Adwaita Sans] or [Helvetica Neue]
- - Crystal: [Noto Sans Math] or [Fira Sans Math]
- - Barbie: [Fair Prosper](https://www.dafont.com/fair-prosper.font)
+ - Monokai: [Noto Sans Math](https://github.com/notofonts/math/releases)
  - Emerald: [Adwaita Sans] or [Open Sans] or [Noto Sans Math] or [Fira Sans Math]
  - Touch: [Adwaita Sans] or [Open Sans]
  - Flat: [Lete Sans Math](https://github.com/abccsss/LeteSansMath/releases)
+ - Plastic: [Adwaita Sans] or [Helvetica Neue]
+ - Barbie: [Fair Prosper](https://www.dafont.com/fair-prosper.font)
+ - Crystal: [Noto Sans Math] or [Fira Sans Math]
+ - Cyberpunk: [Helvetica Neue] or [Comfortaa] or [Noto Sans Math] or [Fira Sans Math]
  - Matrix: [JetBrains Mono](https://github.com/JetBrains/JetBrainsMono/releases)
+ - Army: [ArmyChalk](https://www.fontspace.com/armychalk-font-f9494)
  - Sandstone: [Roboto Slab](https://github.com/googlefonts/robotoslab/tree/main/fonts/otf)
- - Monokai: [Noto Sans Math](https://github.com/notofonts/math/releases)
+ - Wolfenstein: [zilverstone eYe/FS](https://fontstruct.com/fontstructions/show/485705/zilverstone_eye_fs)
 
 If a font is  missing, the default general system font will be used or the one you select
 
