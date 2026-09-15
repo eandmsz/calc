@@ -205,6 +205,7 @@ STAGE 5: Misc fixes:
 
 8) The toggle which is "show angle mode and memory buttons" should be split into two separate toggles: one for basic and one for scientific mode, so we can adjust it separately. By default it should be off for basic and on for scientific mode.
 
+9) Automatically detect if the currently used font supports euler character or not. If not then use regular "e" in pretty print display. This is needed because fonts which have thin weight usually don't support this character and then it gets it from some default system font which will not be thin.
 
 TODO in future:
  - Implement cosmic frosted glass effect (blur) or KDE Blur from the desktop environment. Make the background transparency toggle-able (but not the buttons transparency)
